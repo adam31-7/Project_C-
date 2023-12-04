@@ -1,4 +1,4 @@
-#include "MyForm.h"
+#include "PageClient.h"
 
 using namespace System;
 
@@ -8,6 +8,6 @@ using namespace System::Windows::Forms;
 void Main(array<String^>^ args) {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
-	ProjetPOO::MyForm form;
+	ProjetPOO::PageClient form;
 	Application::Run(%form);
 }

@@ -5,11 +5,11 @@ namespace NS_Composants
 	ref class mappTableClient
 	{
 	private:
-		int id_personne;
-		String^ nom;
-		String^ prenom;
-		String^ date_naissance;
-		String^ date_premiere_commande;
+		int ID_client;
+		String^ Nom_client;
+		String^ Prenom_client;
+		String^ Date_naissance_client;
+		String^ DatePR_Achat;
 	public:
 		mappTableClient(void);
 		String^ SELECT(void);
