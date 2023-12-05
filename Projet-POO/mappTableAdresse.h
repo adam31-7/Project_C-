@@ -15,6 +15,7 @@ namespace NS_Composants
 		int ID_client;
 	public:
 		mappTableAdresse(void);
+		String^ SELECT(void);
 		String^ SELECTByIdClient(void);
 		String^ INSERT(void);
 		String^ UPDATE(void);

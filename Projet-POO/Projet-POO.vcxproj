@@ -122,23 +122,35 @@
   <ItemGroup>
     <ClCompile Include="CAD.cpp" />
     <ClCompile Include="gestionClients.cpp" />
+    <ClCompile Include="gestionCommandes.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="mappPersonnes.cpp" />
     <ClCompile Include="mappTableAdresse.cpp" />
+    <ClCompile Include="mappTableArticle.cpp" />
+    <ClCompile Include="mappTableArticleCommande.cpp" />
     <ClCompile Include="mappTableClient.cpp" />
+    <ClCompile Include="mappTableCommande.cpp" />
     <ClCompile Include="PageClient.cpp" />
+    <ClCompile Include="PageCommande.cpp" />
     <ClCompile Include="PageStats.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CAD.h" />
     <ClInclude Include="gestionClients.h" />
+    <ClInclude Include="gestionCommandes.h" />
     <ClInclude Include="Main.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="mappPersonnes.h" />
     <ClInclude Include="mappTableAdresse.h" />
+    <ClInclude Include="mappTableArticle.h" />
+    <ClInclude Include="mappTableArticleCommande.h" />
     <ClInclude Include="mappTableClient.h" />
+    <ClInclude Include="mappTableCommande.h" />
     <ClInclude Include="PageClient.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="PageCommande.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PageStats.h">
@@ -151,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PageClient.resx">
       <DependentUpon>PageClient.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageCommande.resx">
+      <DependentUpon>PageCommande.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
