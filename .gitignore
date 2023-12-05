@@ -361,3 +361,10 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Projet-POO/PagePersonnel.h
+/Projet-POO/PageCommande.cpp
+/Projet-POO/PageCommande.h
+/Projet-POO/PageCommande.resx
+/Projet-POO/PagePersonnel.cpp
+/Projet-POO/PagePersonnel.resx
+/Projet-POO/Projet-POO.vcxproj
