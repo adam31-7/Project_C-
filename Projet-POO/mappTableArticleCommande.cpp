@@ -12,7 +12,8 @@ namespace NS_Composants
 		return "SELECT * FROM Article_Commande";
 	}
 	String^ mappTableArticleCommande::SELECTArticlesFromCommande(String^ Ref_Commande) {
-		return "SELECT * FROM Article_Commande WHERE Ref_com = '" + Ref_Commande + "'";
+		//return "SELECT * FROM Article_Commande WHERE Ref_com = '" + Ref_Commande + "'";
+		return "SELECT ac.Quanti_CA, art.* FROM Article_Commande as ac INNER JOIN Article as art ON ac.Ref_art = art.Ref_Art WHERE ac.Ref_com = '" + Ref_Commande + "';";
 	}
 	String^ mappTableArticleCommande::INSERT(void) {
 		return "INSERT INTO Article_Commande (ID_Article, ID_Commande, Quantite) VALUES('" + this->ID_Article + "', '" + this->ID_Commande + "', '" + this->Quantite + "')";

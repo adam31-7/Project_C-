@@ -22,7 +22,7 @@ namespace NS_Composants
 
 	String^ mappTableCommande::SELECT(void)
 	{
-		return "SELECT * FROM Commande";
+		return "SELECT * FROM Commande;";
 	}
 
 	String^ mappTableCommande::INSERT(void)
@@ -156,5 +156,4 @@ namespace NS_Composants
 	{
 		return this->Id_Client;
 	}
-
 }

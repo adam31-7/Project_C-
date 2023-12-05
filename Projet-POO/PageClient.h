@@ -478,7 +478,7 @@ namespace ProjetPOO {
 		this->dsPersonneAdresses = this->gestionClients->adressesClient(Convert::ToInt32(this->txt_id->Text), "AdressesPersonnes");
 		this->dgv_adresses->DataSource = this->dsPersonneAdresses;
 		this->dgv_adresses->DataMember = "AdressesPersonnes";
-		this->dgv_adresses->Columns["ID_adresse"]->Visible = false;
+		//this->dgv_adresses->Columns["ID_adresse"]->Visible = false;
 		this->dgv_adresses->Columns["ID_client"]->Visible = false;
 		this->txt_message->Text = "Chargement de l'enregistrement : " + (this->index + 1);
 	}

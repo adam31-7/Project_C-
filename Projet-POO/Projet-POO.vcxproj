@@ -123,6 +123,7 @@
     <ClCompile Include="CAD.cpp" />
     <ClCompile Include="gestionClients.cpp" />
     <ClCompile Include="gestionCommandes.cpp" />
+    <ClCompile Include="gestionPersonnels.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="mappPersonnes.cpp" />
     <ClCompile Include="mappTableAdresse.cpp" />
@@ -130,14 +131,17 @@
     <ClCompile Include="mappTableArticleCommande.cpp" />
     <ClCompile Include="mappTableClient.cpp" />
     <ClCompile Include="mappTableCommande.cpp" />
+    <ClCompile Include="mappTablePersonnel.cpp" />
     <ClCompile Include="PageClient.cpp" />
     <ClCompile Include="PageCommande.cpp" />
+    <ClCompile Include="PagePersonnel.cpp" />
     <ClCompile Include="PageStats.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CAD.h" />
     <ClInclude Include="gestionClients.h" />
     <ClInclude Include="gestionCommandes.h" />
+    <ClInclude Include="gestionPersonnels.h" />
     <ClInclude Include="Main.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -147,10 +151,14 @@
     <ClInclude Include="mappTableArticleCommande.h" />
     <ClInclude Include="mappTableClient.h" />
     <ClInclude Include="mappTableCommande.h" />
+    <ClInclude Include="mappTablePersonnel.h" />
     <ClInclude Include="PageClient.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PageCommande.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="PagePersonnel.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PageStats.h">
@@ -167,6 +175,12 @@
     <EmbeddedResource Include="PageCommande.resx">
       <DependentUpon>PageCommande.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PagePersonnel.resx">
+      <DependentUpon>PagePersonnel.h</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="blanc.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

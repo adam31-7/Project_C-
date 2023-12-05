@@ -50,10 +50,14 @@ namespace ProjetPOO {
 	private: System::Windows::Forms::Button^ btn_sup;
 	private: System::Windows::Forms::Button^ btn_maj;
 	private: System::Windows::Forms::Button^ btn_nouveau;
-	private: System::Windows::Forms::Label^ lbl_adresse;
+	private: System::Windows::Forms::Label^ lbl_commandes;
+
 	private: System::Windows::Forms::DataGridView^ dgv_commandes;
-	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ btn_next;
+	private: System::Windows::Forms::Button^ btn_last;
+
+
+
 	private: System::Windows::Forms::Button^ btn_previous;
 	private: System::Windows::Forms::Label^ lbl_ref;
 	private: System::Windows::Forms::TextBox^ txt_ref;
@@ -88,10 +92,10 @@ namespace ProjetPOO {
 			this->btn_sup = (gcnew System::Windows::Forms::Button());
 			this->btn_maj = (gcnew System::Windows::Forms::Button());
 			this->btn_nouveau = (gcnew System::Windows::Forms::Button());
-			this->lbl_adresse = (gcnew System::Windows::Forms::Label());
+			this->lbl_commandes = (gcnew System::Windows::Forms::Label());
 			this->dgv_commandes = (gcnew System::Windows::Forms::DataGridView());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->btn_next = (gcnew System::Windows::Forms::Button());
+			this->btn_last = (gcnew System::Windows::Forms::Button());
 			this->btn_previous = (gcnew System::Windows::Forms::Button());
 			this->lbl_ref = (gcnew System::Windows::Forms::Label());
 			this->txt_ref = (gcnew System::Windows::Forms::TextBox());
@@ -147,6 +151,7 @@ namespace ProjetPOO {
 			// 
 			// btn_enr
 			// 
+			this->btn_enr->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 			this->btn_enr->Location = System::Drawing::Point(1526, 836);
 			this->btn_enr->Margin = System::Windows::Forms::Padding(5, 6, 5, 6);
 			this->btn_enr->Name = L"btn_enr";
@@ -157,6 +162,7 @@ namespace ProjetPOO {
 			// 
 			// btn_sup
 			// 
+			this->btn_sup->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 			this->btn_sup->Location = System::Drawing::Point(1344, 836);
 			this->btn_sup->Margin = System::Windows::Forms::Padding(5, 6, 5, 6);
 			this->btn_sup->Name = L"btn_sup";
@@ -167,6 +173,7 @@ namespace ProjetPOO {
 			// 
 			// btn_maj
 			// 
+			this->btn_maj->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 			this->btn_maj->Location = System::Drawing::Point(1162, 836);
 			this->btn_maj->Margin = System::Windows::Forms::Padding(5, 6, 5, 6);
 			this->btn_maj->Name = L"btn_maj";
@@ -177,6 +184,7 @@ namespace ProjetPOO {
 			// 
 			// btn_nouveau
 			// 
+			this->btn_nouveau->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 			this->btn_nouveau->Location = System::Drawing::Point(978, 836);
 			this->btn_nouveau->Margin = System::Windows::Forms::Padding(5, 6, 5, 6);
 			this->btn_nouveau->Name = L"btn_nouveau";
@@ -185,21 +193,20 @@ namespace ProjetPOO {
 			this->btn_nouveau->Text = L"Nouveau";
 			this->btn_nouveau->UseVisualStyleBackColor = true;
 			// 
-			// lbl_adresse
+			// lbl_commandes
 			// 
-			this->lbl_adresse->AutoSize = true;
-			this->lbl_adresse->Location = System::Drawing::Point(14, 9);
-			this->lbl_adresse->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
-			this->lbl_adresse->Name = L"lbl_adresse";
-			this->lbl_adresse->Size = System::Drawing::Size(132, 25);
-			this->lbl_adresse->TabIndex = 31;
-			this->lbl_adresse->Text = L"Commandes";
+			this->lbl_commandes->AutoSize = true;
+			this->lbl_commandes->Location = System::Drawing::Point(14, 9);
+			this->lbl_commandes->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
+			this->lbl_commandes->Name = L"lbl_commandes";
+			this->lbl_commandes->Size = System::Drawing::Size(132, 25);
+			this->lbl_commandes->TabIndex = 31;
+			this->lbl_commandes->Text = L"Commandes";
 			// 
 			// dgv_commandes
 			// 
-			this->dgv_commandes->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
+			this->dgv_commandes->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left));
 			this->dgv_commandes->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dgv_commandes->Location = System::Drawing::Point(19, 40);
 			this->dgv_commandes->Margin = System::Windows::Forms::Padding(5, 6, 5, 6);
@@ -208,28 +215,31 @@ namespace ProjetPOO {
 			this->dgv_commandes->Size = System::Drawing::Size(938, 759);
 			this->dgv_commandes->TabIndex = 30;
 			// 
-			// button3
+			// btn_next
 			// 
-			this->button3->Location = System::Drawing::Point(785, 836);
-			this->button3->Margin = System::Windows::Forms::Padding(5, 6, 5, 6);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(80, 44);
-			this->button3->TabIndex = 29;
-			this->button3->Text = L">";
-			this->button3->UseVisualStyleBackColor = true;
+			this->btn_next->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			this->btn_next->Location = System::Drawing::Point(785, 836);
+			this->btn_next->Margin = System::Windows::Forms::Padding(5, 6, 5, 6);
+			this->btn_next->Name = L"btn_next";
+			this->btn_next->Size = System::Drawing::Size(80, 44);
+			this->btn_next->TabIndex = 29;
+			this->btn_next->Text = L">";
+			this->btn_next->UseVisualStyleBackColor = true;
 			// 
-			// button2
+			// btn_last
 			// 
-			this->button2->Location = System::Drawing::Point(877, 836);
-			this->button2->Margin = System::Windows::Forms::Padding(5, 6, 5, 6);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(80, 44);
-			this->button2->TabIndex = 28;
-			this->button2->Text = L">>";
-			this->button2->UseVisualStyleBackColor = true;
+			this->btn_last->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			this->btn_last->Location = System::Drawing::Point(877, 836);
+			this->btn_last->Margin = System::Windows::Forms::Padding(5, 6, 5, 6);
+			this->btn_last->Name = L"btn_last";
+			this->btn_last->Size = System::Drawing::Size(80, 44);
+			this->btn_last->TabIndex = 28;
+			this->btn_last->Text = L">>";
+			this->btn_last->UseVisualStyleBackColor = true;
 			// 
 			// btn_previous
 			// 
+			this->btn_previous->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
 			this->btn_previous->Location = System::Drawing::Point(693, 836);
 			this->btn_previous->Margin = System::Windows::Forms::Padding(5, 6, 5, 6);
 			this->btn_previous->Name = L"btn_previous";
@@ -240,16 +250,18 @@ namespace ProjetPOO {
 			// 
 			// lbl_ref
 			// 
+			this->lbl_ref->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
 			this->lbl_ref->AutoSize = true;
 			this->lbl_ref->Location = System::Drawing::Point(204, 805);
 			this->lbl_ref->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
 			this->lbl_ref->Name = L"lbl_ref";
-			this->lbl_ref->Size = System::Drawing::Size(222, 50);
+			this->lbl_ref->Size = System::Drawing::Size(111, 25);
 			this->lbl_ref->TabIndex = 23;
 			this->lbl_ref->Text = L"Référence";
 			// 
 			// txt_ref
 			// 
+			this->txt_ref->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
 			this->txt_ref->Location = System::Drawing::Point(211, 836);
 			this->txt_ref->Margin = System::Windows::Forms::Padding(5, 6, 5, 6);
 			this->txt_ref->Name = L"txt_ref";
@@ -259,6 +271,7 @@ namespace ProjetPOO {
 			// 
 			// btn_first
 			// 
+			this->btn_first->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
 			this->btn_first->Location = System::Drawing::Point(601, 836);
 			this->btn_first->Margin = System::Windows::Forms::Padding(5, 6, 5, 6);
 			this->btn_first->Name = L"btn_first";
@@ -269,6 +282,9 @@ namespace ProjetPOO {
 			// 
 			// dgv_articles
 			// 
+			this->dgv_articles->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
 			this->dgv_articles->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dgv_articles->Location = System::Drawing::Point(978, 40);
 			this->dgv_articles->Name = L"dgv_articles";
@@ -290,7 +306,7 @@ namespace ProjetPOO {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(2126, 1027);
+			this->ClientSize = System::Drawing::Size(2200, 1100);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->dgv_articles);
 			this->Controls->Add(this->DebugBox);
@@ -301,14 +317,15 @@ namespace ProjetPOO {
 			this->Controls->Add(this->btn_sup);
 			this->Controls->Add(this->btn_maj);
 			this->Controls->Add(this->btn_nouveau);
-			this->Controls->Add(this->lbl_adresse);
+			this->Controls->Add(this->lbl_commandes);
 			this->Controls->Add(this->dgv_commandes);
-			this->Controls->Add(this->button3);
-			this->Controls->Add(this->button2);
+			this->Controls->Add(this->btn_next);
+			this->Controls->Add(this->btn_last);
 			this->Controls->Add(this->btn_previous);
 			this->Controls->Add(this->lbl_ref);
 			this->Controls->Add(this->txt_ref);
 			this->Controls->Add(this->btn_first);
+			this->MinimumSize = System::Drawing::Size(2152, 1098);
 			this->Name = L"PageCommande";
 			this->Text = L"PageCommande";
 			this->Load += gcnew System::EventHandler(this, &PageCommande::PageCommande_Load);
@@ -327,14 +344,15 @@ namespace ProjetPOO {
 			private: void initCommande(void)
 			{
 				this->gestionCommandes = gcnew NS_SVC::gestionCommandes();
+				this->dgv_commandes->Columns->Clear();
 				this->dgv_articles->Columns->Clear();
-				this->dsCommande = this->gestionCommandes->listeCommandes("LesCommandes");
-				this->rowsCount = this->dsCommande->Tables["LesCommandes"]->Rows->Count;
 				this->index = 0;
 				refresh();
 			}
 			private: void refresh(void)
 			{
+				this->dsCommande = this->gestionCommandes->listeCommandes("LesCommandes");
+				this->rowsCount = this->dsCommande->Tables["LesCommandes"]->Rows->Count;
 				this->dgv_commandes->DataSource = this->dsCommande;
 				this->dgv_commandes->DataMember = "LesCommandes";
 				this->txt_ref->Text = Convert::ToString(this->dsCommande->Tables["LesCommandes"]->Rows[this->index]->ItemArray[0]);
