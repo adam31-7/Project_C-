@@ -12,6 +12,10 @@ namespace NS_Composants
 		this->InfoSup = "RIEN";
 		this->ID_client = -1;
 	}
+	String^ mappTableAdresse::SELECT(void)
+	{
+		return "SELECT * FROM Adresse WHERE(ID_adresse = " + this->getId() + ");";
+	}
 	String^ mappTableAdresse::SELECTByIdClient(void)
 	{
 		return "SELECT * FROM Adresse WHERE(ID_client = " + this->getIDClient() + ");";
