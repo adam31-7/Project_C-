@@ -1,30 +1,27 @@
 #pragma once
+#include "mappPersonnes.h"
 using namespace System;
 namespace NS_Composants
 {
-	ref class mappTableClient
+	ref class mappTableClient : public NS_Composants::mappPersonnes
 	{
 	private:
-		int ID_client;
-		String^ Nom_client;
-		String^ Prenom_client;
-		String^ Date_naissance_client;
 		String^ DatePR_Achat;
 	public:
 		mappTableClient(void);
-		String^ SELECT(void);
-		String^ INSERT(void);
-		String^ UPDATE(void);
-		String^ DELETE(void);
-		void setID(int);
-		void setPrenom(String^);
-		void setNom(String^);
-		void setDateNaissance(String^);
+		virtual String^ SELECT(void) override;
+		virtual String^ INSERT(void) override;
+		virtual String^ UPDATE(void) override;
+		virtual String^ DELETE(void) override;
+		void setID(int) override;
+		void setPrenom(String^) override;
+		void setNom(String^) override;
+		void setDateNaissance(String^) override;
 		void setDatePr(String^);
-		int getId(void);
-		String^ getNom(void);
-		String^ getPrenom(void);
-		String^ getDateNaissance(void);
+		int getId(void) override;
+		String^ getNom(void) override;
+		String^ getPrenom(void) override;
+		String^ getDateNaissance(void) override;
 		String^ getDatePr(void);
 	};
 }

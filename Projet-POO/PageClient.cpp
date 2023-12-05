@@ -8,6 +8,6 @@ using namespace System::Windows::Forms;
 void Main(array<String^>^ args) {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
-	ProjetPOO::PageClient form;
+	GestionClient::PageClient form;
 	Application::Run(%form);
 }

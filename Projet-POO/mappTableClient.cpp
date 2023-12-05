@@ -4,16 +4,15 @@ namespace NS_Composants
 {
 	mappTableClient::mappTableClient(void)
 	{
-		this->ID_client = -1;
-		this->Nom_client = "RIEN";
-		this->Prenom_client = "RIEN";
-		this->Date_naissance_client= "RIEN";
+		this->ID = -1;
+		this->Nom = "RIEN";
+		this->Prenom = "RIEN";
+		this->Date_naissance= "RIEN";
 		this->DatePR_Achat = "RIEN";
 	}
 	String^ mappTableClient::SELECT(void)
 	{
-		return "SELECT ID_client, Nom_client, Prenom_client, Date_naissance_client, DatePR_Achat " +
-			"FROM Client;";
+		return mappPersonnes::SELECT("Client");
 	}
 	String^ mappTableClient::INSERT(void)
 	{
@@ -29,35 +28,35 @@ namespace NS_Composants
 	}
 	String^ mappTableClient::DELETE(void)
 	{
-		return "DELETE FROM Client " +
-			"WHERE(ID_client = " + this->getId() + ");";
+		return "DELETE FROM Adresse WHERE (ID_client = " + this->getId() + ");" + mappPersonnes::DELETE("Client", "ID_client");
+		//return "DELETE FROM " + table + " WHERE(" + id_name +" = " + this->getId() + ");";
 	}
 	void mappTableClient::setID(int ID_client)
 	{
 		if (ID_client > 0)
 		{
-			this->ID_client = ID_client;
+			this->ID = ID_client;
 		}
 	}
 	void mappTableClient::setPrenom(String^ Prenom_client)
 	{
 		if (Prenom_client != "")
 		{
-			this->Prenom_client = Prenom_client;
+			this->Prenom = Prenom_client;
 		}
 	}
 	void mappTableClient::setNom(String^ Nom_client)
 	{
 		if (Nom_client != "")
 		{
-			this->Nom_client = Nom_client;
+			this->Nom = Nom_client;
 		}
 	}
 	void mappTableClient::setDateNaissance(String^ Date_naissance_client)
 	{
 		if (Date_naissance_client != "")
 		{
-			this->Date_naissance_client = Date_naissance_client;
+			this->Date_naissance = Date_naissance_client;
 		}
 	}
 	void mappTableClient::setDatePr(String^ DatePR_Achat)
@@ -69,19 +68,19 @@ namespace NS_Composants
 	}
 	int mappTableClient::getId(void)
 	{
-		return this->ID_client;
+		return this->ID;
 	}
 	String^ mappTableClient::getNom(void)
 	{
-		return this->Nom_client;
+		return this->Nom;
 	}
 	String^ mappTableClient::getPrenom(void)
 	{
-		return this->Prenom_client;
+		return this->Prenom;
 	}
 	String^ mappTableClient::getDateNaissance(void)
 	{
-		return this->Date_naissance_client;
+		return this->Date_naissance;
 	}
 	String^ mappTableClient::getDatePr(void)
 	{

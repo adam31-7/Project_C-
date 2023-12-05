@@ -1,6 +1,7 @@
 #pragma once
 #include "CAD.h"
 #include "mappTableClient.h"
+#include "mappTableAdresse.h"
 
 using namespace System::Data;
 
@@ -15,9 +16,11 @@ namespace NS_SVC
 		NS_Composants::CAD^ cad;
 		DataSet^ ds;
 		NS_Composants::mappTableClient^ client;
+		NS_Composants::mappTableAdresse^ adresse;
 	public:
 		gestionClients(void);
 		DataSet^ listeClients(String^);
+		DataSet^ adressesClient(int, String^);
 		void ajouter(String^, String^, array<String^>^);
 		void modifier(int, String^, String^, array<String^>^);
 		void supprimer(int);

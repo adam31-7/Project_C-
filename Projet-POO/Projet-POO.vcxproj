@@ -122,12 +122,16 @@
   <ItemGroup>
     <ClCompile Include="CAD.cpp" />
     <ClCompile Include="gestionClients.cpp" />
+    <ClCompile Include="mappPersonnes.cpp" />
+    <ClCompile Include="mappTableAdresse.cpp" />
     <ClCompile Include="mappTableClient.cpp" />
     <ClCompile Include="PageClient.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CAD.h" />
     <ClInclude Include="gestionClients.h" />
+    <ClInclude Include="mappPersonnes.h" />
+    <ClInclude Include="mappTableAdresse.h" />
     <ClInclude Include="mappTableClient.h" />
     <ClInclude Include="PageClient.h">
       <FileType>CppForm</FileType>
