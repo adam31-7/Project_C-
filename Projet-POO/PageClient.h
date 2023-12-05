@@ -4,7 +4,7 @@
 #include "gestionClients.h"
 #include <iostream>
 
-namespace GestionClient {
+namespace ProjetPOO {
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -478,6 +478,8 @@ namespace GestionClient {
 		this->dsPersonneAdresses = this->gestionClients->adressesClient(Convert::ToInt32(this->txt_id->Text), "AdressesPersonnes");
 		this->dgv_adresses->DataSource = this->dsPersonneAdresses;
 		this->dgv_adresses->DataMember = "AdressesPersonnes";
+		this->dgv_adresses->Columns["ID_adresse"]->Visible = false;
+		this->dgv_adresses->Columns["ID_client"]->Visible = false;
 		this->txt_message->Text = "Chargement de l'enregistrement : " + (this->index + 1);
 	}
 	private: System::Void btn_maj_Click(System::Object^ sender, System::EventArgs^ e)
