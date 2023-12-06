@@ -220,7 +220,7 @@ namespace ProjetPOO {
 			   this->dgv_adresses->Margin = System::Windows::Forms::Padding(4);
 			   this->dgv_adresses->Name = L"dgv_adresses";
 			   this->dgv_adresses->RowHeadersWidth = 82;
-			   this->dgv_adresses->Size = System::Drawing::Size(494, 299);
+			   this->dgv_adresses->Size = System::Drawing::Size(570, 298);
 			   this->dgv_adresses->TabIndex = 10;
 			   // 
 			   // lbl_adresse
@@ -282,7 +282,7 @@ namespace ProjetPOO {
 			   this->lbl_message->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
 				   | System::Windows::Forms::AnchorStyles::Right));
 			   this->lbl_message->AutoSize = true;
-			   this->lbl_message->Location = System::Drawing::Point(25, 356);
+			   this->lbl_message->Location = System::Drawing::Point(25, 355);
 			   this->lbl_message->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			   this->lbl_message->Name = L"lbl_message";
 			   this->lbl_message->Size = System::Drawing::Size(64, 16);
@@ -293,17 +293,17 @@ namespace ProjetPOO {
 			   // 
 			   this->txt_message->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
 				   | System::Windows::Forms::AnchorStyles::Right));
-			   this->txt_message->Location = System::Drawing::Point(29, 375);
+			   this->txt_message->Location = System::Drawing::Point(29, 374);
 			   this->txt_message->Margin = System::Windows::Forms::Padding(4);
 			   this->txt_message->Multiline = true;
 			   this->txt_message->Name = L"txt_message";
-			   this->txt_message->Size = System::Drawing::Size(752, 58);
+			   this->txt_message->Size = System::Drawing::Size(828, 58);
 			   this->txt_message->TabIndex = 17;
 			   // 
 			   // debugText
 			   // 
 			   this->debugText->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			   this->debugText->Location = System::Drawing::Point(636, 343);
+			   this->debugText->Location = System::Drawing::Point(712, 342);
 			   this->debugText->Margin = System::Windows::Forms::Padding(4);
 			   this->debugText->Name = L"debugText";
 			   this->debugText->Size = System::Drawing::Size(145, 22);
@@ -313,7 +313,7 @@ namespace ProjetPOO {
 			   // 
 			   this->DebugBox->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 			   this->DebugBox->AutoSize = true;
-			   this->DebugBox->Location = System::Drawing::Point(568, 347);
+			   this->DebugBox->Location = System::Drawing::Point(644, 346);
 			   this->DebugBox->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			   this->DebugBox->Name = L"DebugBox";
 			   this->DebugBox->Size = System::Drawing::Size(54, 16);
@@ -374,7 +374,7 @@ namespace ProjetPOO {
 			   this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			   this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			   this->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
-			   this->ClientSize = System::Drawing::Size(813, 450);
+			   this->ClientSize = System::Drawing::Size(889, 449);
 			   this->Controls->Add(this->label4);
 			   this->Controls->Add(this->label3);
 			   this->Controls->Add(this->label2);
@@ -400,6 +400,7 @@ namespace ProjetPOO {
 			   this->Controls->Add(this->txt_id);
 			   this->Controls->Add(this->btn_first);
 			   this->Margin = System::Windows::Forms::Padding(4);
+			   this->MinimumSize = System::Drawing::Size(907, 496);
 			   this->Name = L"PageClient";
 			   this->Text = L"PageClient";
 			   this->Load += gcnew System::EventHandler(this, &PageClient::PageClient_Load);
