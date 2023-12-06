@@ -40,7 +40,8 @@ namespace NS_SVC
 			i = i + 5;
 		}
 	}
-	void gestionClients::gestionClients::modifier(int id_client, String^ nom, String^ prenom, array<String^>^ lesAdresses)
+	void gestionClients::gestionClients::modifier(int id_client, String^ nom,
+		String^ prenom, array<String^>^ lesAdresses)
 	{
 		this->client->setID(id_client);
 		this->client->setNom(nom);
@@ -49,15 +50,14 @@ namespace NS_SVC
 		for (int i = 0; i < lesAdresses->Length - 1; i++)
 		{
 			this->adresse->setIDClient(id_client);
-			this->adresse->setID(Convert::ToInt32(lesAdresses[i]));
-			this->adresse->setNumRue(Convert::ToInt32(lesAdresses[i+1]));
-			this->adresse->setNomRue(lesAdresses[i + 2]);
-			this->adresse->setVille(lesAdresses[i + 3]);
-			this->adresse->setCodePostal(lesAdresses[i + 4]);
-			this->adresse->setPays(lesAdresses[i + 5]);
-			this->adresse->setInfoSup(lesAdresses[i + 6]);
+			this->adresse->setNumRue(Convert::ToInt32(lesAdresses[i]));
+			this->adresse->setNomRue(lesAdresses[i + 1]);
+			this->adresse->setVille(lesAdresses[i + 2]);
+			this->adresse->setCodePostal(lesAdresses[i + 3]);
+			this->adresse->setPays(lesAdresses[i + 4]);
+			this->adresse->setInfoSup(lesAdresses[i + 5]);
 			this->cad->actionRows(this->adresse->UPDATE());
-			i = i + 6;
+			i = i + 5;
 		}
 
 	}

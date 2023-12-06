@@ -251,7 +251,7 @@ namespace ProjetPOO {
 			   this->btn_maj->Name = L"btn_maj";
 			   this->btn_maj->Size = System::Drawing::Size(80, 34);
 			   this->btn_maj->TabIndex = 13;
-			   this->btn_maj->Text = L"Modifier";
+			   this->btn_maj->Text = L"Mise à jour";
 			   this->btn_maj->UseVisualStyleBackColor = true;
 			   this->btn_maj->Click += gcnew System::EventHandler(this, &PageClient::btn_maj_Click);
 			   // 
@@ -446,12 +446,9 @@ namespace ProjetPOO {
 		this->txt_nom->Text = "";
 		this->txt_prenom->Text = "";
 		this->dgv_adresses->DataSource = nullptr;
-		this->dgv_adresses->Columns->Add("Num_rue", "Num_rue");
-		this->dgv_adresses->Columns->Add("Nom_rue", "Nom_rue");
+		this->dgv_adresses->Columns->Add("Adresse", "Adresse");
 		this->dgv_adresses->Columns->Add("Ville", "Ville");
-		this->dgv_adresses->Columns->Add("Code_postal", "Code_postal");
-		this->dgv_adresses->Columns->Add("InfoSup", "InfoSup");
-		this->dgv_adresses->Columns->Add("Pays", "Pays");
+		this->dgv_adresses->Columns->Add("Cp", "Cp");
 		this->txt_message->Text = "Veuillez saisir les renseignements avant d'enregister";
 		this->mode = "nouveau";
 	}
@@ -459,23 +456,19 @@ namespace ProjetPOO {
 	{
 		if (this->mode == "nouveau")
 		{
-			int taille = (this->dgv_adresses->RowCount - 1) * 6;
+			int i;
+			int ii;
+			int taille = (this->dgv_adresses->RowCount - 1) * 3;
 			array<String^>^ lesAdresses = gcnew array<String^>(taille);
-			int j = 0;
-			for (int i = 0; i < taille - 1; i++)
+			ii = 0;
+			for (i = 0; i < taille - 1; i++)
 			{
-				lesAdresses[i] = Convert::ToString(this->dgv_adresses[0, j]->Value);
+				lesAdresses[i] = Convert::ToString(this->dgv_adresses[0, ii]->Value);
 				i++;
-				lesAdresses[i] = Convert::ToString(this->dgv_adresses[1, j]->Value);
+				lesAdresses[i] = Convert::ToString(this->dgv_adresses[1, ii]->Value);
 				i++;
-				lesAdresses[i] = Convert::ToString(this->dgv_adresses[2, j]->Value);
-				i++;
-				lesAdresses[i] = Convert::ToString(this->dgv_adresses[3, j]->Value);
-				i++;
-				lesAdresses[i] = Convert::ToString(this->dgv_adresses[4, j]->Value);
-				i++;
-				lesAdresses[i] = Convert::ToString(this->dgv_adresses[5, j]->Value);
-				j++;
+				lesAdresses[i] = Convert::ToString(this->dgv_adresses[2, ii]->Value);
+				ii++;
 			}
 			this->gestionClients->ajouter(this->txt_nom->Text, this->txt_prenom->Text,
 				lesAdresses);
@@ -486,27 +479,23 @@ namespace ProjetPOO {
 		}
 		else if (this->mode == "maj")
 		{
-			int taille = (this->dgv_adresses->RowCount - 1) * 7;
+			int i;
+			int ii;
+			int taille = (this->dgv_adresses->RowCount - 1) * 4;
 			array<String^>^ lesAdresses = gcnew array<String^>(taille);
-			int j = 0;
+			ii = 0;
 			this->dgv_adresses->Columns["id_adresse"]->Visible = true;
 
-			for (int i = 0; i < taille - 1; i++)
+			for (i = 0; i < taille - 1; i++)
 			{
-				lesAdresses[i] = Convert::ToString(this->dgv_adresses[0, j]->Value);
+				lesAdresses[i] = Convert::ToString(this->dgv_adresses[0, ii]->Value);
 				i++;
-				lesAdresses[i] = Convert::ToString(this->dgv_adresses[1, j]->Value);
+				lesAdresses[i] = Convert::ToString(this->dgv_adresses[1, ii]->Value);
 				i++;
-				lesAdresses[i] = Convert::ToString(this->dgv_adresses[2, j]->Value);
+				lesAdresses[i] = Convert::ToString(this->dgv_adresses[2, ii]->Value);
 				i++;
-				lesAdresses[i] = Convert::ToString(this->dgv_adresses[3, j]->Value);
-				i++;
-				lesAdresses[i] = Convert::ToString(this->dgv_adresses[4, j]->Value);
-				i++;
-				lesAdresses[i] = Convert::ToString(this->dgv_adresses[5, j]->Value);
-				i++;
-				lesAdresses[i] = Convert::ToString(this->dgv_adresses[6, j]->Value);
-				j++;
+				lesAdresses[i] = Convert::ToString(this->dgv_adresses[3, ii]->Value);
+				ii++;
 			}
 
 			/////////////////////////
