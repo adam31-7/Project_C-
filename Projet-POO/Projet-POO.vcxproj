@@ -126,6 +126,7 @@
     <ClCompile Include="gestionPersonnels.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="mappPersonnes.cpp" />
+    <ClCompile Include="mappStock.cpp" />
     <ClCompile Include="mappTableAdresse.cpp" />
     <ClCompile Include="mappTableArticle.cpp" />
     <ClCompile Include="mappTableArticleCommande.cpp" />
@@ -143,10 +144,12 @@
     <ClInclude Include="gestionClients.h" />
     <ClInclude Include="gestionCommandes.h" />
     <ClInclude Include="gestionPersonnels.h" />
+    <ClInclude Include="gestionStocks.h" />
     <ClInclude Include="Main.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="mappPersonnes.h" />
+    <ClInclude Include="mappStock.h" />
     <ClInclude Include="mappTableAdresse.h" />
     <ClInclude Include="mappTableArticle.h" />
     <ClInclude Include="mappTableArticleCommande.h" />
