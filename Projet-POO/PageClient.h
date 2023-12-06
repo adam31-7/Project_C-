@@ -400,6 +400,7 @@ namespace ProjetPOO {
 			   this->Controls->Add(this->txt_id);
 			   this->Controls->Add(this->btn_first);
 			   this->Margin = System::Windows::Forms::Padding(4);
+			   this->MaximumSize = System::Drawing::Size(907, 496);
 			   this->MinimumSize = System::Drawing::Size(907, 496);
 			   this->Name = L"PageClient";
 			   this->Text = L"PageClient";
