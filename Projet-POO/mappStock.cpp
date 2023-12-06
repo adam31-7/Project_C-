@@ -35,7 +35,7 @@ String^ NS_Composants::mappStock::getMontantTotalClient(void)
 
 String^ NS_Composants::mappStock::CalculerValCommerciale(void)
 {
-	"SELECT Article.Ref_Art,Article.Nom_Art,SUM(CAST(Article.QuantiteS_Art AS DECIMAL) * CAST(Article.Prix_HT_Art AS DECIMAL)) AS CommercialValue"
+	return "SELECT Article.Ref_Art,Article.Nom_Art,SUM(CAST(Article.QuantiteS_Art AS DECIMAL) * CAST(Article.Prix_HT_Art AS DECIMAL)) AS CommercialValue"
 		+"FROM Article AS A GROUP BY A.Ref_Art, A.Nom_Art;";
 }
 
@@ -55,7 +55,7 @@ String^ NS_Composants::mappStock::getChiffreAffaire(void)
 
 String^ NS_Composants::mappStock::getPanierMoyen(void)
 {
-	"SELECT C.ID_client, C.Nom_client, C.Prenom_client, AVG(CAST((A.Prix_HT_Art * AC.Quanti_CA * (1 - R.pourcentage_remise / 100)) AS DECIMAL)) AS AverageBasketValueAfterDiscount"
+	return "SELECT C.ID_client, C.Nom_client, C.Prenom_client, AVG(CAST((A.Prix_HT_Art * AC.Quanti_CA * (1 - R.pourcentage_remise / 100)) AS DECIMAL)) AS AverageBasketValueAfterDiscount"
 		+"FROM Client AS C JOIN Commande AS Co ON C.ID_client = Co.ID_client"
 		+"JOIN Article_Commande AC ON Co.Ref_com = AC.Ref_com JOIN Article A ON AC.Ref_Art = A.Ref_Art"
 		+"LEFT JOIN Remise R ON Co.ID_remise = R.ID_remise"
