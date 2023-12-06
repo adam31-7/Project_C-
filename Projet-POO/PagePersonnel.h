@@ -186,10 +186,10 @@ namespace ProjetPOO {
 			// 
 			// btn_enr
 			// 
-			this->btn_enr->Location = System::Drawing::Point(324, 251);
+			this->btn_enr->Location = System::Drawing::Point(314, 251);
 			this->btn_enr->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btn_enr->Name = L"btn_enr";
-			this->btn_enr->Size = System::Drawing::Size(228, 30);
+			this->btn_enr->Size = System::Drawing::Size(238, 30);
 			this->btn_enr->TabIndex = 35;
 			this->btn_enr->Text = L"Enregistrer";
 			this->btn_enr->UseVisualStyleBackColor = true;
@@ -197,10 +197,10 @@ namespace ProjetPOO {
 			// 
 			// btn_sup
 			// 
-			this->btn_sup->Location = System::Drawing::Point(472, 219);
+			this->btn_sup->Location = System::Drawing::Point(469, 219);
 			this->btn_sup->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btn_sup->Name = L"btn_sup";
-			this->btn_sup->Size = System::Drawing::Size(80, 28);
+			this->btn_sup->Size = System::Drawing::Size(83, 28);
 			this->btn_sup->TabIndex = 34;
 			this->btn_sup->Text = L"Supprimer";
 			this->btn_sup->UseVisualStyleBackColor = true;
@@ -208,7 +208,7 @@ namespace ProjetPOO {
 			// 
 			// btn_maj
 			// 
-			this->btn_maj->Location = System::Drawing::Point(400, 219);
+			this->btn_maj->Location = System::Drawing::Point(396, 219);
 			this->btn_maj->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btn_maj->Name = L"btn_maj";
 			this->btn_maj->Size = System::Drawing::Size(73, 28);
@@ -219,10 +219,10 @@ namespace ProjetPOO {
 			// 
 			// btn_nouveau
 			// 
-			this->btn_nouveau->Location = System::Drawing::Point(324, 219);
+			this->btn_nouveau->Location = System::Drawing::Point(314, 219);
 			this->btn_nouveau->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btn_nouveau->Name = L"btn_nouveau";
-			this->btn_nouveau->Size = System::Drawing::Size(76, 28);
+			this->btn_nouveau->Size = System::Drawing::Size(83, 28);
 			this->btn_nouveau->TabIndex = 32;
 			this->btn_nouveau->Text = L"Nouveau";
 			this->btn_nouveau->UseVisualStyleBackColor = true;
