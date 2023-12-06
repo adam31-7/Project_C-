@@ -7,8 +7,8 @@ namespace NS_Composants
 		this->ID = -1;
 		this->Nom = "RIEN";
 		this->Prenom = "RIEN";
-		this->Date_naissance= "RIEN";
-		this->DatePR_Achat = "RIEN";
+		this->Date_naissance= DateTime::Now;
+		this->DatePR_Achat = DateTime::Now;
 	}
 	String^ mappTableClient::SELECT(void)
 	{
@@ -52,19 +52,13 @@ namespace NS_Composants
 			this->Nom = Nom_client;
 		}
 	}
-	void mappTableClient::setDateNaissance(String^ Date_naissance_client)
+	void mappTableClient::setDateNaissance(DateTime Date_naissance_client)
 	{
-		if (Date_naissance_client != "")
-		{
 			this->Date_naissance = Date_naissance_client;
-		}
 	}
-	void mappTableClient::setDatePr(String^ DatePR_Achat)
+	void mappTableClient::setDatePr(DateTime DatePR_Achat)
 	{
-		if (DatePR_Achat != "")
-		{
 			this->DatePR_Achat = DatePR_Achat;
-		}
 	}
 	int mappTableClient::getId(void)
 	{
@@ -78,11 +72,11 @@ namespace NS_Composants
 	{
 		return this->Prenom;
 	}
-	String^ mappTableClient::getDateNaissance(void)
+	DateTime mappTableClient::getDateNaissance(void)
 	{
 		return this->Date_naissance;
 	}
-	String^ mappTableClient::getDatePr(void)
+	DateTime mappTableClient::getDatePr(void)
 	{
 		return this->DatePR_Achat;
 	}

@@ -8,7 +8,7 @@ namespace NS_Composants
 		int ID;
 		String^ Nom;
 		String^ Prenom;
-		String^ Date_naissance;
+		DateTime Date_naissance;
 	public:
 		mappPersonnes(void);
 		virtual String^ SELECT(String^ table);
@@ -18,10 +18,10 @@ namespace NS_Composants
 		virtual void setID(int) = 0;
 		virtual void setPrenom(String^) = 0;
 		virtual void setNom(String^) = 0;
-		virtual void setDateNaissance(String^) = 0;
+		virtual void setDateNaissance(DateTime) = 0;
 		virtual int getId(void) = 0;
 		virtual String^ getNom(void) = 0;
 		virtual String^ getPrenom(void) = 0;
-		virtual String^ getDateNaissance(void) = 0;
+		virtual DateTime getDateNaissance(void) = 0;
 	};
 }

@@ -18,8 +18,8 @@ namespace NS_SVC
 	public:
 		gestionPersonnels(void);
 		DataSet^ listePersonnels(String^);
-		void ajouter(String^, String^, String^, int, int);
-		void modifier(int, String^, String^, String^, int, int);
+		void ajouter(String^, String^, DateTime, DateTime, int, int);
+		void modifier(int, String^, String^, DateTime, DateTime, int, int);
 		void supprimer(int);
 	};
 }

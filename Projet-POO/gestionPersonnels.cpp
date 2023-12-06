@@ -13,22 +13,24 @@ namespace NS_SVC
 		return this->ds;
 	}
 
-	void gestionPersonnels::ajouter(String^ nom, String^ prenom, String^ dateEmbauche, int idSupH, int idAdresse)
+	void gestionPersonnels::ajouter(String^ nom, String^ prenom, DateTime dateNaissance, DateTime dateEmbauche, int idSupH, int idAdresse)
 	{
 		int id;
 		this->perso->setNom(nom);
 		this->perso->setPrenom(prenom);
+		this->perso->setDateNaissance(dateNaissance);
 		this->perso->setDateEmbauche(dateEmbauche);
 		this->perso->setID_SupH(idSupH);
 		this->perso->setID_Adresse(idAdresse);
 		id = this->cad->actionRowsID(this->perso->INSERT());
 	}
 
-	void gestionPersonnels::modifier(int id, String^ nom, String^ prenom, String^ dateEmbauche, int idSupH, int idAdresse)
+	void gestionPersonnels::modifier(int id, String^ nom, String^ prenom, DateTime dateNaissance, DateTime dateEmbauche, int idSupH, int idAdresse)
 	{
 		this->perso->setID(id);
 		this->perso->setNom(nom);
 		this->perso->setPrenom(prenom);
+		this->perso->setDateNaissance(dateNaissance);
 		this->perso->setDateEmbauche(dateEmbauche);
 		this->perso->setID_SupH(idSupH);
 		this->perso->setID_Adresse(idAdresse);

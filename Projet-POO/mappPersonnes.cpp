@@ -8,7 +8,7 @@ namespace NS_Composants
 		this->ID = -1;
 		this->Nom = "RIEN";
 		this->Prenom = "RIEN";
-		this->Date_naissance = "RIEN";
+		this->Date_naissance = DateTime::Now;
 	}
 	String^ mappPersonnes::SELECT(String^ table)
 	{

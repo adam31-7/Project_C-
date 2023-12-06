@@ -6,8 +6,8 @@ namespace NS_Composants
 		this->ID = -1;
 		this->Nom = "RIEN";
 		this->Prenom = "RIEN";
-		this->Date_naissance = "RIEN";
-		this->Date_embauche = "RIEN";
+		this->Date_naissance = DateTime::Now;
+		this->Date_embauche = DateTime::Now;
 		this->ID_SupH = -1;
 		this->ID_adresse = -1;
 	}
@@ -60,20 +60,14 @@ namespace NS_Composants
 		}
 	}
 
-	void mappTablePersonnel::setDateNaissance(String^ Date_naissance_perso_perso)
+	void mappTablePersonnel::setDateNaissance(DateTime Date_naissance_perso)
 	{
-		if (Date_naissance_perso_perso != "")
-		{
-			this->Date_naissance = Date_naissance_perso_perso;
-		}
+		this->Date_naissance = Date_naissance_perso;
 	}
 
-	void mappTablePersonnel::setDateEmbauche(String^ Date_embauche)
+	void mappTablePersonnel::setDateEmbauche(DateTime Date_embauche)
 	{
-		if (Date_embauche != "")
-		{
-			this->Date_embauche = Date_embauche;
-		}
+		this->Date_embauche = Date_embauche;
 	}
 
 	void mappTablePersonnel::setID_SupH(int ID_SupH)
@@ -107,12 +101,12 @@ namespace NS_Composants
 		return this->Prenom;
 	}
 
-	String^ mappTablePersonnel::getDateNaissance(void)
+	DateTime mappTablePersonnel::getDateNaissance(void)
 	{
 		return this->Date_naissance;
 	}
 
-	String^ mappTablePersonnel::getDateEmbauche(void)
+	DateTime mappTablePersonnel::getDateEmbauche(void)
 	{
 		return this->Date_embauche;
 	}

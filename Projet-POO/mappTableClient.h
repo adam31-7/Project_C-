@@ -6,7 +6,7 @@ namespace NS_Composants
 	ref class mappTableClient : public NS_Composants::mappPersonnes
 	{
 	private:
-		String^ DatePR_Achat;
+		DateTime DatePR_Achat;
 	public:
 		mappTableClient(void);
 		virtual String^ SELECT(void) override;
@@ -16,12 +16,12 @@ namespace NS_Composants
 		void setID(int) override;
 		void setPrenom(String^) override;
 		void setNom(String^) override;
-		void setDateNaissance(String^) override;
-		void setDatePr(String^);
+		void setDateNaissance(DateTime) override;
+		void setDatePr(DateTime);
 		int getId(void) override;
 		String^ getNom(void) override;
 		String^ getPrenom(void) override;
-		String^ getDateNaissance(void) override;
-		String^ getDatePr(void);
+		DateTime getDateNaissance(void) override;
+		DateTime getDatePr(void);
 	};
 }

@@ -6,7 +6,7 @@ namespace NS_Composants
 	ref class mappTablePersonnel : public NS_Composants::mappPersonnes
 	{
 	private:
-		String^ Date_embauche;
+		DateTime Date_embauche;
 		int ID_SupH;
 		int ID_adresse;
 	public:
@@ -18,15 +18,15 @@ namespace NS_Composants
 		void setID(int) override;
 		void setPrenom(String^) override;
 		void setNom(String^) override;
-		void setDateNaissance(String^) override;
-		void setDateEmbauche(String^);
+		void setDateNaissance(DateTime) override;
+		void setDateEmbauche(DateTime);
 		void setID_SupH(int);
 		void setID_Adresse(int);
 		int getId(void) override;
 		String^ getNom(void) override;
 		String^ getPrenom(void) override;
-		String^ getDateNaissance(void) override;
-		String^ getDateEmbauche(void);
+		DateTime getDateNaissance(void) override;
+		DateTime getDateEmbauche(void);
 		int getID_SupH(void);
 		int getID_Adresse(void);
 	};
