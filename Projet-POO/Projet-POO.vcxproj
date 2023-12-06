@@ -136,6 +136,7 @@
     <ClCompile Include="PageCommande.cpp" />
     <ClCompile Include="PagePersonnel.cpp" />
     <ClCompile Include="PageStats.cpp" />
+    <ClCompile Include="PageStock.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CAD.h" />
@@ -164,6 +165,9 @@
     <ClInclude Include="PageStats.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="PageStock.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Main.resx">
@@ -177,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PagePersonnel.resx">
       <DependentUpon>PagePersonnel.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageStock.resx">
+      <DependentUpon>PageStock.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
