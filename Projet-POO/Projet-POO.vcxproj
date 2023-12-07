@@ -121,6 +121,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CAD.cpp" />
+    <ClCompile Include="gestionArticle.cpp" />
     <ClCompile Include="gestionClients.cpp" />
     <ClCompile Include="gestionCommandes.cpp" />
     <ClCompile Include="gestionPersonnels.cpp" />
@@ -143,6 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CAD.h" />
+    <ClInclude Include="gestionArticle.h" />
     <ClInclude Include="gestionClients.h" />
     <ClInclude Include="gestionCommandes.h" />
     <ClInclude Include="gestionPersonnels.h" />
