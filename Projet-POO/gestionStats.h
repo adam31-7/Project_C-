@@ -20,8 +20,8 @@ namespace NS_SVC {
 		gestionStats(void);
 		DataSet^ listeArticlePV(String^);
 		DataSet^ listeArticleMV(String^);
-		DataSet^ Montant(String^);
-		DataSet^ CA(String^);
+		DataSet^ Montant(int, String^);
+		Decimal CA(void);
 
 
 	};

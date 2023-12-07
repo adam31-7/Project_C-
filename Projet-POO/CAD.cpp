@@ -38,6 +38,31 @@ namespace NS_Composants
 		return id;
 	}
 
+	Decimal CAD::actionRowsCalcul(String^ rq_sql)
+	{
+		// Déclaration d'une variable pour stocker le résultat
+		Decimal result;
+
+		// Appel de la méthode setSQL pour définir la requête SQL à exécuter
+		this->setSQL(rq_sql);
+
+		// Attribution de la requête SQL à la propriété CommandText de l'objet SqlCommand
+		this->CMD->CommandText = this->rq_sql;
+
+		// Ouverture de la connexion à la base de données
+		this->CNX->Open();
+
+		// Exécution de la requête SQL et récupération du résultat sous forme scalaire (une valeur unique)
+		// Cette valeur est généralement utilisée pour récupérer un identifiant (ID) après une insertion
+		result = Convert::ToDecimal(this->CMD->ExecuteScalar());
+
+		// Fermeture de la connexion à la base de données
+		this->CNX->Close();
+
+		// Retour du résultat obtenu après l'exécution de la requête SQL
+		return result;
+	}
+
 
 	// Méthode pour exécuter une requête SQL qui ne retourne pas de résultat (INSERT, UPDATE, DELETE, etc.)
 	void CAD::actionRows(String^ rq_sql)

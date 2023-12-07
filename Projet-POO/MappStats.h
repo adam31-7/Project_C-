@@ -20,7 +20,7 @@ namespace NS_Composants
 		String^ getArticlePlusVendu(void);
 		String^ getArticleMoinsVendu(void);
 		String^ ProduitSousSeuil(void);
-		String^ getMontantTotalClient(void);
+		String^ getMontantTotalClient(int id);
 		String^ CalculerValCommerciale(void);
 		String^ CalculerValeurStock(void);
 		String^ getChiffreAffaire(void);

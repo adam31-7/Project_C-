@@ -4,27 +4,27 @@ NS_Composants::mappStats::mappStats(void) {};
 
 String^ NS_Composants::mappStats::getArticlePlusVendu(void)
 {
-	return "SELECT TOP 10 AC.Ref_Art,A.Nom_Art, SUM(CAST(AC.Quanti_CA AS DECIMAL)) AS TotalQuantitySold"
+	return "SELECT TOP 10 AC.Ref_Art,A.Nom_Art, SUM(CAST(AC.Quanti_CA AS DECIMAL)) AS TotalQuantitySold " + " "
 		+ "FROM Article_Commande AS AC JOIN Article AS A ON AC.Ref_Art = A.Ref_Art GROUP BY AC.Ref_Art, A.Nom_Art ORDER BY TotalQuantitySold DESC;";
 }
 
 String^ NS_Composants::mappStats::getArticleMoinsVendu(void)
 {
-	return "SELECT TOP 10 AC.Ref_Art,A.Nom_Art, SUM(CAST(AC.Quanti_CA AS DECIMAL)) AS TotalQuantitySold"
+	return "SELECT TOP 10 AC.Ref_Art,A.Nom_Art, SUM(CAST(AC.Quanti_CA AS DECIMAL)) AS TotalQuantitySold" + " "
 		+ "FROM Article_Commande AS AC JOIN Article AS A ON AC.Ref_Art = A.Ref_Art GROUP BY AC.Ref_Art, A.Nom_Art ORDER BY TotalQuantitySold ASC;";
 }
 
 
-String^ NS_Composants::mappStats::getMontantTotalClient(void)
+String^ NS_Composants::mappStats::getMontantTotalClient(int id)
 {
-	return "SELECT Client.ID_client, Client.Nom_Client, Client.Prenom_Client,"
-		+ "SUM(CAST(A.Prix_HT_Art AS DECIMAL) * CAST(AC.Quanti_CA AS DECIMAL)) AS TotalAmountSpent"
-		+ "FROM Client AS C"
-		+ "JOIN Commande AS Co ON C.ID_client = Co.ID_client"
-		+ "JOIN Article_Commande AS AC ON Co.Ref_com = AC.Ref_com"
-		+ "JOIN Article AS A ON AC.Ref_Art = A.Ref_Art"
-		+ "GROUP BY C.ID_client, C.Nom_client, C.Prenom_client"
-		+ "HAVING C.ID_client = " + this->getIDClient() + ";";
+	return "SELECT C.ID_client, C.Nom_Client, C.Prenom_Client," + " "
+		+ "SUM(CAST(A.Prix_HT_Art AS DECIMAL) * CAST(AC.Quanti_CA AS DECIMAL)) AS TotalAmountSpent" + " "
+		+ "FROM Client AS C" + " "
+		+ "JOIN Commande AS Co ON C.ID_client = Co.ID_client" + " "
+		+ "JOIN Article_Commande AS AC ON Co.Ref_com = AC.Ref_com" + " "
+		+ "JOIN Article AS A ON AC.Ref_Art = A.Ref_Art" + " "
+		+ "GROUP BY C.ID_client, C.Nom_client, C.Prenom_client" + " "
+		+ "HAVING C.ID_client = " + id + ";";
 }
 
 
@@ -44,7 +44,7 @@ String^ NS_Composants::mappStats::CalculerValeurStock(void)
 
 String^ NS_Composants::mappStats::getChiffreAffaire(void)
 {
-	return "SELECT SUM(CAST(A.Prix_HT_Art() AS DECIMAL)* CAST(AC.Quanti_CA AS DECIMAL)) AS TotalRevenue"
+	return "SELECT SUM(CAST(A.Prix_HT_Art AS DECIMAL) * CAST(AC.Quanti_CA AS DECIMAL)) AS TotalRevenue "
 		+ "FROM Article_Commande AS AC JOIN Article AS A ON AC.Ref_Art = A.Ref_Art;";
 }
 

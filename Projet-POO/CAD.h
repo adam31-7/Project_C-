@@ -18,6 +18,7 @@ namespace NS_Composants
 	public:
 		CAD(void);
 		int actionRowsID(String^);
+		Decimal actionRowsCalcul(String^);
 		void actionRows(String^);
 		DataSet^ getRows(String^, String^);
 	};
