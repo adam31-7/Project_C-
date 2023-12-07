@@ -19,12 +19,12 @@ namespace NS_Composants
 	{
 		return "INSERT INTO Article " +
 			"(Ref_Art, Couleur_Art, Nature_Art, Nom_Art, QuantiteS_Art, Prix_HT_Art, Taux_TVA, SeuilRea) " +
-			"VALUES('" + this->getRef() + "', '" + this->getCouleur() + "', '" + this->getNature() + "', '" + this->getNom() + "', '" + this->getQuantite_Stock() + "', '" + this->getPrixHT() + "', '" + this->getTauxTVA() + "', '" + this->getPrixHT() + "');SELECT @@IDENTITY; ";
+			"VALUES('" + this->getRef() + "', '" + this->getCouleur() + "', '" + this->getNature() + "', '" + this->getNom() + "', '" + this->getQuantite_Stock() + "', '" + Convert::ToString(this->getPrixHT())->Replace(",", ".") + "', '" + this->getTauxTVA() + "', '" + Convert::ToString(this->getSeuilRea())->Replace(",", ".") + "');SELECT @@IDENTITY; ";
 	}
 	String^ mappTableArticle::UPDATE(void)
 	{
 		return "UPDATE Article " +
-			"SET Couleur_Art = '" + this->getCouleur() + "', Nature_Art = '" + this->getNature() + "', Nom_Art = '" + this->getNom() + "', QuantiteS_Art = '" + this->getQuantite_Stock() + "', Taux_TVA = '" + this->getTauxTVA() + "', Prix_HT_Art = '" + this->getPrixHT() + "' " +
+			"SET Couleur_Art = '" + this->getCouleur() + "', Nature_Art = '" + this->getNature() + "', Nom_Art = '" + this->getNom() + "', QuantiteS_Art = '" + this->getQuantite_Stock() + "', Taux_TVA = '" + this->getTauxTVA() + "', Prix_HT_Art = '" + Convert::ToString(this->getPrixHT())->Replace(",", ".") + "', SeuilRea = '" + Convert::ToString(this->getSeuilRea())->Replace(",", ".") + "' " +
 			"WHERE (Ref_Art = '" + this->getRef() + "');";
 	}
 	String^ mappTableArticle::DELETE(void)
