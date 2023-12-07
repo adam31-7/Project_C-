@@ -10,8 +10,9 @@ namespace NS_Composants
 		String^ Nature;
 		String^ Nom;
 		int Quantite_Stock;
-		float TauxTVA;
-		float PrixHT;
+		Decimal TauxTVA;
+		Decimal PrixHT;
+		int SeuilRea;
 	public:
 		mappTableArticle(void);
 		String^ SELECT(void);
@@ -21,17 +22,19 @@ namespace NS_Composants
 		void setRef(String^);
 		void setCouleur(String^);
 		void setNature(String^);
-		void setTauxTVA(float);
-		void setPrixHT(float);
+		void setTauxTVA(Decimal);
+		void setPrixHT(Decimal);
 		void setNom(String^);
 		void setQuantite_Stock(int);
+		void setSeuilRea(int);
 		String^ getRef(void);
 		String^ getCouleur(void);
 		String^ getNature(void);
-		float getTauxTVA(void);
-		float getPrixHT(void);
+		Decimal getTauxTVA(void);
+		Decimal getPrixHT(void);
 		String^ getNom(void);
 		int getQuantite_Stock(void);
+		int getSeuilRea(void);
 	};
 }
 

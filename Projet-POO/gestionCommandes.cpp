@@ -80,7 +80,7 @@ void gestionCommandes::ajouter(int Id_Adresse_livraison, int Id_Adresse_facturat
 
 		String^ reference = this->client->getPrenom()->Substring(0,2)->ToUpper() + this->client->getNom()->Substring(0, 2)->ToUpper() + this->commande->getDateEmission().Year + this->adresse->getVille()->Substring(0,3)->ToUpper();
 
-		int numIncr = this->cad->actionRowsID("SELECT COUNT(*) AS NombreDeCommandes FROM Commande WHERE Ref_com LIKE '" + reference +"%'; ") + 1;
+		int numIncr = this->cad->actionRowsID("SELECT COUNT(*) AS NombreDeCommandes FROM Commande WHERE Ref_com LIKE '" + reference +"%'; ");
 
 		if (numIncr < 10)
 		{
