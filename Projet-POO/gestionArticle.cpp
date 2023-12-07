@@ -33,9 +33,23 @@ namespace NS_SVC
 		this->article->setCouleur(infoArticle[1]);
 		this->article->setNature(infoArticle[2]);
 		this->article->setNom(infoArticle[3]);
-		this->article->setQuantite_Stock(Convert::ToInt32(infoArticle[4]));
-		this->article->setTauxTVA(Convert::ToInt32(infoArticle[5]));
-		this->article->setPrixHT(Convert::ToInt32(infoArticle[6]));
+
+		int quantiteStock = 0, tauxTVA = 0, prixHT = 0;
+
+		if (!String::IsNullOrEmpty(infoArticle[4]))
+			quantiteStock = Convert::ToInt32(infoArticle[4]);
+
+		if (!String::IsNullOrEmpty(infoArticle[5]))
+			tauxTVA = Convert::ToInt32(infoArticle[5]);
+
+		if (!String::IsNullOrEmpty(infoArticle[6]))
+			prixHT = Convert::ToInt32(infoArticle[6]);
+
+		this->article->setQuantite_Stock(quantiteStock);
+		this->article->setTauxTVA(tauxTVA);
+		this->article->setPrixHT(prixHT);
+
 		this->cad->actionRows(this->article->UPDATE());
+
 	}
 }

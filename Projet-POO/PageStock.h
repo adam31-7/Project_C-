@@ -160,6 +160,8 @@ namespace ProjetPOO {
 	}
 	private: System::Void btn_ajouter_Click(System::Object^ sender, System::EventArgs^ e) {
 
+		this->gestionArticle = gcnew NS_SVC::gestionArticle();
+
 		array<String^>^ infoArticle = gcnew array<String^>(dgv_articles->ColumnCount);
 
 		for (int i = 0; i < dgv_articles->ColumnCount; i++)
@@ -170,25 +172,27 @@ namespace ProjetPOO {
 		gestionArticle->ajouter(infoArticle);
 
 		refresh();
+		this->txt_message->Text = "Ajout effectué";
 	}
 	private: void refresh(void)
 		{
 			this->dsArticle = this->gestionArticle->listeArticles("Articles");
 			this->dgv_articles->DataSource = this->dsArticle;
 			this->dgv_articles->DataMember = "Articles";
-			//this->txt_message->Text = "Chargement de l'enregistrement : " + (this->index + 1);
 		}
 	private: System::Void btn_enregistrer_Click(System::Object^ sender, System::EventArgs^ e) {
 		array<String^>^ infoArticle = gcnew array<String^>(dgv_articles->ColumnCount);
 		for each (DataGridViewRow ^ row in dgv_articles->Rows)
 		{
+			this->gestionArticle = gcnew NS_SVC::gestionArticle();
 			for (int i = 0; i < dgv_articles->ColumnCount; i++)
 			{
 				infoArticle[i] = Convert::ToString(dgv_articles[i, row->Index]->Value);
 			}
 			gestionArticle->modifier(infoArticle);
 		}
-
+		refresh();
+		this->txt_message->Text = "Enregistrement effectué";
 	}
 };
 }

@@ -24,12 +24,12 @@ namespace NS_Composants
 	String^ mappTableArticle::UPDATE(void)
 	{
 		return "UPDATE Article " +
-			"SET Couleur_article = '" + this->getCouleur() + "', Nature_article = '" + this->getNature() + "', Nom_article = '" + this->getNom() + "', Quantite_stock = '" + this->getQuantite_Stock() + "', Taux_TVA = '" + this->getTauxTVA() + "', Prix_HT = '" + this->getPrixHT() + "' " +
-			"WHERE(Ref_article = '" + this->getRef() + ");";
+			"SET Couleur_Art = '" + this->getCouleur() + "', Nature_Art = '" + this->getNature() + "', Nom_Art = '" + this->getNom() + "', QuantiteS_Art = '" + this->getQuantite_Stock() + "', Taux_TVA = '" + this->getTauxTVA() + "', Prix_HT_Art = '" + this->getPrixHT() + "' " +
+			"WHERE (Ref_Art = '" + this->getRef() + "');";
 	}
 	String^ mappTableArticle::DELETE(void)
 	{
-		return "DELETE FROM Article WHERE (Ref_article = '" + this->getRef() + ");";
+		return "DELETE FROM Article WHERE (Ref_Art = '" + this->getRef() + ");";
 	}
 	void mappTableArticle::setRef(String^ Ref_article)
 	{
