@@ -18,8 +18,8 @@ namespace NS_Composants
 	String^ mappTableArticle::INSERT(void)
 	{
 		return "INSERT INTO Article " +
-			"(Ref_article, Couleur_article, Nature_article, Nom_article, Quantite_stock, Taux_TVA, Prix_HT) " +
-			"VALUES('" + this->getRef() + "', '" + this->getCouleur() + "', '" + this->getNature() + "', '" + this->getNom() + "', '" + this->getQuantite_Stock() + "', '" + this->getTauxTVA() + "', '" + this->getPrixHT() + "');SELECT @@IDENTITY; ";
+			"(Ref_Art, Couleur_Art, Nature_Art, Nom_Art, QuantiteS_Art, Prix_HT_Art, Taux_TVA, SeuilRea) " +
+			"VALUES('" + this->getRef() + "', '" + this->getCouleur() + "', '" + this->getNature() + "', '" + this->getNom() + "', '" + this->getQuantite_Stock() + "', '" + this->getPrixHT() + "', '" + this->getTauxTVA() + "', '" + this->getPrixHT() + "');SELECT @@IDENTITY; ";
 	}
 	String^ mappTableArticle::UPDATE(void)
 	{
