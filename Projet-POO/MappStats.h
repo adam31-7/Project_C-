@@ -1,8 +1,7 @@
 #pragma once
 using namespace System;
 namespace NS_Composants
-{
-	ref class mappStock
+{	ref class mappStats
 	{
 	private:
 		String^ Ref_Art;
@@ -16,7 +15,7 @@ namespace NS_Composants
 		String^ Quanti_CA;
 		int ID_client;
 	public:
-		mappStock(void);
+		mappStats(void);
 		String^ getArticlePlusVendu(void);
 		String^ getArticleMoinsVendu(void);
 		String^ ProduitSousSeuil(void);
