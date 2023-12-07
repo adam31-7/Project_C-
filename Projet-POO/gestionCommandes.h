@@ -30,6 +30,7 @@ namespace NS_SVC
 		DataSet^ listeArticlesCommande(String^, String^);
 		DataSet^ listeClients(String^);
 		DataSet^ listeAdresses(String^);
+		void ajouter(int, int, DateTime, DateTime, DateTime, DateTime, String^, int);
 	};
 }
 

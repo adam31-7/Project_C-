@@ -68,8 +68,12 @@ namespace ProjetPOO {
 	private: NS_SVC::gestionCommandes^ gestionCommandes;
 	private: DataSet^ dsCommande;
 	private: DataSet^ dsCommandeArticles;
+
+	private: String^ mode;
+
 	private: int rowsCount;
 	private: int index;
+
 	private: System::Windows::Forms::Label^ lbl_moyen_paiement;
 	private: System::Windows::Forms::TextBox^ txt_moyen_paiement;
 	private: System::Windows::Forms::Label^ lbl_id_client;
@@ -189,6 +193,7 @@ namespace ProjetPOO {
 			this->btn_enr->TabIndex = 35;
 			this->btn_enr->Text = L"Enregistrer";
 			this->btn_enr->UseVisualStyleBackColor = true;
+			this->btn_enr->Click += gcnew System::EventHandler(this, &PageCommande::btn_enr_Click);
 			// 
 			// btn_sup
 			// 
@@ -222,6 +227,7 @@ namespace ProjetPOO {
 			this->btn_nouveau->TabIndex = 32;
 			this->btn_nouveau->Text = L"Nouveau";
 			this->btn_nouveau->UseVisualStyleBackColor = true;
+			this->btn_nouveau->Click += gcnew System::EventHandler(this, &PageCommande::btn_nouveau_Click);
 			// 
 			// lbl_commandes
 			// 
@@ -243,6 +249,7 @@ namespace ProjetPOO {
 			this->btn_next->TabIndex = 29;
 			this->btn_next->Text = L">";
 			this->btn_next->UseVisualStyleBackColor = true;
+			this->btn_next->Click += gcnew System::EventHandler(this, &PageCommande::btn_next_Click);
 			// 
 			// btn_last
 			// 
@@ -254,6 +261,7 @@ namespace ProjetPOO {
 			this->btn_last->TabIndex = 28;
 			this->btn_last->Text = L">>";
 			this->btn_last->UseVisualStyleBackColor = true;
+			this->btn_last->Click += gcnew System::EventHandler(this, &PageCommande::btn_last_Click);
 			// 
 			// btn_previous
 			// 
@@ -265,6 +273,7 @@ namespace ProjetPOO {
 			this->btn_previous->TabIndex = 27;
 			this->btn_previous->Text = L"<";
 			this->btn_previous->UseVisualStyleBackColor = true;
+			this->btn_previous->Click += gcnew System::EventHandler(this, &PageCommande::btn_previous_Click);
 			// 
 			// lbl_ref
 			// 
@@ -297,6 +306,7 @@ namespace ProjetPOO {
 			this->btn_first->TabIndex = 20;
 			this->btn_first->Text = L"<<";
 			this->btn_first->UseVisualStyleBackColor = true;
+			this->btn_first->Click += gcnew System::EventHandler(this, &PageCommande::btn_first_Click);
 			// 
 			// dgv_articles
 			// 
@@ -533,5 +543,58 @@ namespace ProjetPOO {
 				this->dgv_articles->DataMember = "Articles";
 				this->txt_message->Text = "Chargement de l'enregistrement : " + (this->index + 1);
 			}
-	};
+	private: System::Void btn_first_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->index = 0;
+		refresh();
+	}
+private: System::Void btn_previous_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->index > 0)
+	{
+		this->index--;
+		refresh();
+	}
+}
+private: System::Void btn_next_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->index < this->rowsCount - 1)
+	{
+		this->index++;
+		refresh();
+	}
+}
+private: System::Void btn_last_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->index = this->rowsCount - 1;
+	refresh();
+}
+private: System::Void btn_nouveau_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->txt_ref->Text = "";
+	this->txt_moyen_paiement->Text = "";
+	this->txt_id_client->Text = "";
+	this->txt_id_adresse_livraison->Text = "";
+	this->txt_id_adresse_facturation->Text = "";
+	this->dt_date_emission->Value = DateTime::Now;
+	this->dt_date_paiement->Value = DateTime::Now;
+	this->dt_date_livraison->Value = DateTime::Now;
+	this->dt_date_reglement->Value = DateTime::Now;
+	this->mode = "nouveau";
+	this->txt_message->Text = "Nouvel enregistrement";
+}
+private: System::Void btn_enr_Click(System::Object^ sender, System::EventArgs^ e) {
+if (this->mode == "nouveau")
+	{
+		this->gestionCommandes->ajouter(Convert::ToInt32(this->txt_id_adresse_livraison->Text), Convert::ToInt32(this->txt_id_adresse_facturation->Text), this->dt_date_emission->Value, this->dt_date_livraison->Value, this->dt_date_paiement->Value, this->dt_date_reglement->Value, this->txt_moyen_paiement->Text, Convert::ToInt32(this->txt_id_client->Text));
+		this->txt_message->Text = "Enregistrement ajouté";
+	}
+	else if (this->mode == "modifier")
+	{
+		//this->gestionCommandes->(this->txt_ref->Text, this->dt_date_emission->Value, this->dt_date_livraison->Value, this->txt_moyen_paiement->Text, this->dt_date_paiement->Value, this->dt_date_reglement->Value, this->txt_id_client->Text, this->txt_id_adresse_livraison->Text, this->txt_id_adresse_facturation->Text);
+		this->txt_message->Text = "Enregistrement modifié";
+	}
+	else if (this->mode == "supprimer")
+	{
+		//this->gestionCommandes->supprimer(this->txt_ref->Text);
+		this->txt_message->Text = "Enregistrement supprimé";
+	}
+	this->initCommande();
+}
+};
 }

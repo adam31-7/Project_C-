@@ -10,6 +10,7 @@ namespace NS_Composants
 	public:
 		mappTableClient(void);
 		virtual String^ SELECT(void) override;
+		virtual String^ SELECTByID(void) override;
 		virtual String^ INSERT(void) override;
 		virtual String^ UPDATE(void) override;
 		virtual String^ DELETE(void) override;

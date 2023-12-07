@@ -17,6 +17,7 @@ namespace NS_Composants
 		mappTableAdresse(void);
 		String^ SELECT(void);
 		String^ SELECTByIdClient(void);
+		String^ SELECTById(void);
 		String^ INSERT(void);
 		String^ UPDATE(void);
 		String^ DELETE(void);

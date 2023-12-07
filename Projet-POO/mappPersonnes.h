@@ -12,6 +12,7 @@ namespace NS_Composants
 	public:
 		mappPersonnes(void);
 		virtual String^ SELECT(String^ table);
+		virtual String^ SELECTbyID(String^ table, String^ id_name);
 		virtual String^ INSERT(void) = 0;
 		virtual String^ UPDATE(void) = 0;
 		virtual String^ DELETE(String^ table, String^ id_name);

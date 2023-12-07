@@ -20,6 +20,10 @@ namespace NS_Composants
 	{
 		return "SELECT * FROM Adresse WHERE(ID_client = " + this->getIDClient() + ");";
 	}
+	String^ mappTableAdresse::SELECTById(void)
+	{
+		return "SELECT * FROM Adresse WHERE(ID_adresse = " + this->getId() + ");";
+	}
 	String^ mappTableAdresse::INSERT(void)
 	{
 		return "INSERT INTO Adresse " +

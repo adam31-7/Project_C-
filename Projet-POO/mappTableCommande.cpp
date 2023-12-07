@@ -12,10 +12,10 @@ namespace NS_Composants
 		this->Reference = "";
 		this->Id_Adresse_livraison = 0;
 		this->Id_Adresse_facturation = 0;
-		this->Date_emission = "";
-		this->Date_livraison = "";
-		this->Date_paiement = "";
-		this->Date_reglement = "";
+		this->Date_emission = DateTime::Now;
+		this->Date_livraison = DateTime::Now;
+		this->Date_paiement = DateTime::Now;
+		this->Date_reglement = DateTime::Now;
 		this->Moyen_reglement = "";
 		this->Id_Client = 0;
 	}
@@ -27,7 +27,9 @@ namespace NS_Composants
 
 	String^ mappTableCommande::INSERT(void)
 	{
-		return "INSERT INTO Commande (Reference, Id_Adresse_livraison, Id_Adresse_facturation, Date_emission, Date_livraison, Date_paiement, Date_reglement, Moyen_reglement, Id_Client) VALUES('" + this->getReference() + "', '" + this->getIdAdresseLivraison() + "', '" + this->getIdAdresseFacturation() + "', '" + this->getDateEmission() + "', '" + this->getDateLivraison() + "', '" + this->getDatePaiement() + "', '" + this->getDateReglement() + "', '" + this->getMoyenReglement() + "', '" + this->getIdClient() + "')";
+		return "INSERT INTO Commande (Ref_com, ID_adresse_livraison, ID_adresse_facturation, Date_emission, Date_livraison_prevue, Date_paiement, Date_reglement, MoyenPaie, ID_client) VALUES('"
+
+			+ this->getReference() + "', '" + this->getIdAdresseLivraison() + "', '" + this->getIdAdresseFacturation() + "', '" + this->getDateEmission() + "', '" + this->getDateLivraison() + "', '" + this->getDatePaiement() + "', '" + this->getDateReglement() + "', '" + this->getMoyenReglement() + "', '" + this->getIdClient() + "')";
 	}
 
 	String^ mappTableCommande::UPDATE(void)
@@ -45,6 +47,7 @@ namespace NS_Composants
 		if (Reference != "")
 		{
 			this->Reference = Reference;
+
 		}
 	}
 
@@ -64,36 +67,24 @@ namespace NS_Composants
 		}
 	}
 
-	void mappTableCommande::setDateEmission(String^ Date_emission)
+	void mappTableCommande::setDateEmission(DateTime Date_emission)
 	{
-		if (Date_emission != "")
-		{
-			this->Date_emission = Date_emission;
-		}
+		this->Date_emission = Date_emission;
 	}
 
-	void mappTableCommande::setDateLivraison(String^ Date_livraison)
+	void mappTableCommande::setDateLivraison(DateTime Date_livraison)
 	{
-		if (Date_livraison != "")
-		{
-			this->Date_livraison = Date_livraison;
-		}
+		this->Date_livraison = Date_livraison;
 	}
 
-	void mappTableCommande::setDatePaiement(String^ Date_paiement)
+	void mappTableCommande::setDatePaiement(DateTime Date_paiement)
 	{
-		if (Date_paiement != "")
-		{
 			this->Date_paiement = Date_paiement;
-		}
 	}
 
-	void mappTableCommande::setDateReglement(String^ Date_reglement)
+	void mappTableCommande::setDateReglement(DateTime Date_reglement)
 	{
-		if (Date_reglement != "")
-		{
 			this->Date_reglement = Date_reglement;
-		}
 	}
 
 	void mappTableCommande::setMoyenReglement(String^ Moyen_reglement)
@@ -127,22 +118,22 @@ namespace NS_Composants
 		return this->Id_Adresse_facturation;
 	}
 
-	String^ mappTableCommande::getDateEmission(void)
+	DateTime mappTableCommande::getDateEmission(void)
 	{
 		return this->Date_emission;
 	}
 
-	String^ mappTableCommande::getDateLivraison(void)
+	DateTime mappTableCommande::getDateLivraison(void)
 	{
 		return this->Date_livraison;
 	}
 
-	String^ mappTableCommande::getDatePaiement(void)
+	DateTime mappTableCommande::getDatePaiement(void)
 	{
 		return this->Date_paiement;
 	}
 
-	String^ mappTableCommande::getDateReglement(void)
+	DateTime mappTableCommande::getDateReglement(void)
 	{
 		return this->Date_reglement;
 	}

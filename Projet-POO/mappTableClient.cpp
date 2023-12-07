@@ -14,6 +14,10 @@ namespace NS_Composants
 	{
 		return mappPersonnes::SELECT("Client");
 	}
+	String^ mappTableClient::SELECTByID(void)
+	{
+		return mappPersonnes::SELECTbyID("Client", "ID_client");
+	}
 	String^ mappTableClient::INSERT(void)
 	{
 		return "INSERT INTO Client " +

@@ -14,6 +14,10 @@ namespace NS_Composants
 	{
 		return "SELECT * FROM " + table + ";";
 	}
+	String^ mappPersonnes::SELECTbyID(String^ table, String^ id_name)
+	{
+		return "SELECT * FROM " + table + " WHERE(" + id_name + " = " + this->getId() + ");";
+	}
 	String^ mappPersonnes::DELETE(String^ table, String^ id_name)
 	{
 		return "DELETE FROM " + table + " WHERE(" + id_name + " = " + this->getId() + ");";
