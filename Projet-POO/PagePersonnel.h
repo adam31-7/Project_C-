@@ -92,6 +92,8 @@ namespace ProjetPOO {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Label^ label5;
 
 
 
@@ -141,52 +143,59 @@ namespace ProjetPOO {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// DebugBox
 			// 
 			this->DebugBox->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->DebugBox->AutoSize = true;
-			this->DebugBox->Location = System::Drawing::Point(343, 345);
+			this->DebugBox->Location = System::Drawing::Point(339, 393);
 			this->DebugBox->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->DebugBox->Name = L"DebugBox";
 			this->DebugBox->Size = System::Drawing::Size(54, 16);
 			this->DebugBox->TabIndex = 39;
 			this->DebugBox->Text = L"Debug :";
+			this->DebugBox->Click += gcnew System::EventHandler(this, &PagePersonnel::DebugBox_Click);
 			// 
 			// debugText
 			// 
 			this->debugText->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->debugText->Location = System::Drawing::Point(411, 342);
+			this->debugText->Location = System::Drawing::Point(407, 390);
 			this->debugText->Margin = System::Windows::Forms::Padding(4);
 			this->debugText->Name = L"debugText";
 			this->debugText->Size = System::Drawing::Size(145, 22);
 			this->debugText->TabIndex = 38;
+			this->debugText->TextChanged += gcnew System::EventHandler(this, &PagePersonnel::debugText_TextChanged);
 			// 
 			// txt_message
 			// 
 			this->txt_message->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->txt_message->Location = System::Drawing::Point(33, 374);
+			this->txt_message->Location = System::Drawing::Point(29, 422);
 			this->txt_message->Margin = System::Windows::Forms::Padding(4);
 			this->txt_message->Multiline = true;
 			this->txt_message->Name = L"txt_message";
 			this->txt_message->Size = System::Drawing::Size(523, 58);
 			this->txt_message->TabIndex = 37;
+			this->txt_message->TextChanged += gcnew System::EventHandler(this, &PagePersonnel::txt_message_TextChanged);
 			// 
 			// lbl_message
 			// 
 			this->lbl_message->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->lbl_message->AutoSize = true;
-			this->lbl_message->Location = System::Drawing::Point(28, 353);
+			this->lbl_message->Location = System::Drawing::Point(24, 401);
 			this->lbl_message->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_message->Name = L"lbl_message";
 			this->lbl_message->Size = System::Drawing::Size(64, 16);
 			this->lbl_message->TabIndex = 36;
 			this->lbl_message->Text = L"Message";
+			this->lbl_message->Click += gcnew System::EventHandler(this, &PagePersonnel::lbl_message_Click);
 			// 
 			// btn_enr
 			// 
-			this->btn_enr->Location = System::Drawing::Point(314, 251);
+			this->btn_enr->Location = System::Drawing::Point(310, 299);
 			this->btn_enr->Margin = System::Windows::Forms::Padding(4);
 			this->btn_enr->Name = L"btn_enr";
 			this->btn_enr->Size = System::Drawing::Size(238, 30);
@@ -197,7 +206,7 @@ namespace ProjetPOO {
 			// 
 			// btn_sup
 			// 
-			this->btn_sup->Location = System::Drawing::Point(469, 219);
+			this->btn_sup->Location = System::Drawing::Point(465, 267);
 			this->btn_sup->Margin = System::Windows::Forms::Padding(4);
 			this->btn_sup->Name = L"btn_sup";
 			this->btn_sup->Size = System::Drawing::Size(83, 28);
@@ -208,7 +217,7 @@ namespace ProjetPOO {
 			// 
 			// btn_maj
 			// 
-			this->btn_maj->Location = System::Drawing::Point(396, 219);
+			this->btn_maj->Location = System::Drawing::Point(392, 267);
 			this->btn_maj->Margin = System::Windows::Forms::Padding(4);
 			this->btn_maj->Name = L"btn_maj";
 			this->btn_maj->Size = System::Drawing::Size(73, 28);
@@ -219,7 +228,7 @@ namespace ProjetPOO {
 			// 
 			// btn_nouveau
 			// 
-			this->btn_nouveau->Location = System::Drawing::Point(314, 219);
+			this->btn_nouveau->Location = System::Drawing::Point(310, 267);
 			this->btn_nouveau->Margin = System::Windows::Forms::Padding(4);
 			this->btn_nouveau->Name = L"btn_nouveau";
 			this->btn_nouveau->Size = System::Drawing::Size(83, 28);
@@ -230,7 +239,7 @@ namespace ProjetPOO {
 			// 
 			// btn_next
 			// 
-			this->btn_next->Location = System::Drawing::Point(151, 252);
+			this->btn_next->Location = System::Drawing::Point(147, 300);
 			this->btn_next->Margin = System::Windows::Forms::Padding(4);
 			this->btn_next->Name = L"btn_next";
 			this->btn_next->Size = System::Drawing::Size(69, 28);
@@ -241,7 +250,7 @@ namespace ProjetPOO {
 			// 
 			// btn_last
 			// 
-			this->btn_last->Location = System::Drawing::Point(221, 252);
+			this->btn_last->Location = System::Drawing::Point(217, 300);
 			this->btn_last->Margin = System::Windows::Forms::Padding(4);
 			this->btn_last->Name = L"btn_last";
 			this->btn_last->Size = System::Drawing::Size(54, 55);
@@ -252,7 +261,7 @@ namespace ProjetPOO {
 			// 
 			// btn_previous
 			// 
-			this->btn_previous->Location = System::Drawing::Point(86, 252);
+			this->btn_previous->Location = System::Drawing::Point(82, 300);
 			this->btn_previous->Margin = System::Windows::Forms::Padding(4);
 			this->btn_previous->Name = L"btn_previous";
 			this->btn_previous->Size = System::Drawing::Size(65, 28);
@@ -263,7 +272,7 @@ namespace ProjetPOO {
 			// 
 			// txt_prenom
 			// 
-			this->txt_prenom->Location = System::Drawing::Point(33, 150);
+			this->txt_prenom->Location = System::Drawing::Point(29, 198);
 			this->txt_prenom->Margin = System::Windows::Forms::Padding(4);
 			this->txt_prenom->Name = L"txt_prenom";
 			this->txt_prenom->Size = System::Drawing::Size(236, 22);
@@ -273,53 +282,58 @@ namespace ProjetPOO {
 			// lbl_prenom
 			// 
 			this->lbl_prenom->AutoSize = true;
-			this->lbl_prenom->Location = System::Drawing::Point(28, 130);
+			this->lbl_prenom->Location = System::Drawing::Point(24, 178);
 			this->lbl_prenom->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_prenom->Name = L"lbl_prenom";
 			this->lbl_prenom->Size = System::Drawing::Size(54, 16);
 			this->lbl_prenom->TabIndex = 25;
 			this->lbl_prenom->Text = L"Prénom";
+			this->lbl_prenom->Click += gcnew System::EventHandler(this, &PagePersonnel::lbl_prenom_Click);
 			// 
 			// lbl_nom
 			// 
 			this->lbl_nom->AutoSize = true;
-			this->lbl_nom->Location = System::Drawing::Point(28, 72);
+			this->lbl_nom->Location = System::Drawing::Point(24, 120);
 			this->lbl_nom->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_nom->Name = L"lbl_nom";
 			this->lbl_nom->Size = System::Drawing::Size(36, 16);
 			this->lbl_nom->TabIndex = 24;
 			this->lbl_nom->Text = L"Nom";
+			this->lbl_nom->Click += gcnew System::EventHandler(this, &PagePersonnel::lbl_nom_Click);
 			// 
 			// lbl_id
 			// 
 			this->lbl_id->AutoSize = true;
-			this->lbl_id->Location = System::Drawing::Point(28, 16);
+			this->lbl_id->Location = System::Drawing::Point(24, 64);
 			this->lbl_id->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_id->Name = L"lbl_id";
 			this->lbl_id->Size = System::Drawing::Size(18, 16);
 			this->lbl_id->TabIndex = 23;
 			this->lbl_id->Text = L"Id";
+			this->lbl_id->Click += gcnew System::EventHandler(this, &PagePersonnel::lbl_id_Click);
 			// 
 			// txt_nom
 			// 
-			this->txt_nom->Location = System::Drawing::Point(33, 91);
+			this->txt_nom->Location = System::Drawing::Point(29, 139);
 			this->txt_nom->Margin = System::Windows::Forms::Padding(4);
 			this->txt_nom->Name = L"txt_nom";
 			this->txt_nom->Size = System::Drawing::Size(236, 22);
 			this->txt_nom->TabIndex = 22;
+			this->txt_nom->TextChanged += gcnew System::EventHandler(this, &PagePersonnel::txt_nom_TextChanged);
 			// 
 			// txt_id
 			// 
-			this->txt_id->Location = System::Drawing::Point(33, 36);
+			this->txt_id->Location = System::Drawing::Point(29, 84);
 			this->txt_id->Margin = System::Windows::Forms::Padding(4);
 			this->txt_id->Name = L"txt_id";
 			this->txt_id->ReadOnly = true;
 			this->txt_id->Size = System::Drawing::Size(236, 22);
 			this->txt_id->TabIndex = 21;
+			this->txt_id->TextChanged += gcnew System::EventHandler(this, &PagePersonnel::txt_id_TextChanged);
 			// 
 			// btn_first
 			// 
-			this->btn_first->Location = System::Drawing::Point(31, 252);
+			this->btn_first->Location = System::Drawing::Point(27, 300);
 			this->btn_first->Margin = System::Windows::Forms::Padding(4);
 			this->btn_first->Name = L"btn_first";
 			this->btn_first->Size = System::Drawing::Size(55, 55);
@@ -331,74 +345,82 @@ namespace ProjetPOO {
 			// lbl_date_naissance
 			// 
 			this->lbl_date_naissance->AutoSize = true;
-			this->lbl_date_naissance->Location = System::Drawing::Point(29, 190);
+			this->lbl_date_naissance->Location = System::Drawing::Point(25, 238);
 			this->lbl_date_naissance->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_date_naissance->Name = L"lbl_date_naissance";
 			this->lbl_date_naissance->Size = System::Drawing::Size(120, 16);
 			this->lbl_date_naissance->TabIndex = 40;
 			this->lbl_date_naissance->Text = L"Date de naissance";
+			this->lbl_date_naissance->Click += gcnew System::EventHandler(this, &PagePersonnel::lbl_date_naissance_Click);
 			// 
 			// lbl_date_embauche
 			// 
 			this->lbl_date_embauche->AutoSize = true;
-			this->lbl_date_embauche->Location = System::Drawing::Point(313, 17);
+			this->lbl_date_embauche->Location = System::Drawing::Point(309, 65);
 			this->lbl_date_embauche->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_date_embauche->Name = L"lbl_date_embauche";
 			this->lbl_date_embauche->Size = System::Drawing::Size(114, 16);
 			this->lbl_date_embauche->TabIndex = 42;
 			this->lbl_date_embauche->Text = L"Date d\'embauche";
+			this->lbl_date_embauche->Click += gcnew System::EventHandler(this, &PagePersonnel::lbl_date_embauche_Click);
 			// 
 			// txt_id_suph
 			// 
-			this->txt_id_suph->Location = System::Drawing::Point(317, 95);
+			this->txt_id_suph->Location = System::Drawing::Point(313, 143);
 			this->txt_id_suph->Margin = System::Windows::Forms::Padding(4);
 			this->txt_id_suph->Name = L"txt_id_suph";
 			this->txt_id_suph->Size = System::Drawing::Size(236, 22);
 			this->txt_id_suph->TabIndex = 45;
+			this->txt_id_suph->TextChanged += gcnew System::EventHandler(this, &PagePersonnel::txt_id_suph_TextChanged);
 			// 
 			// lbl_id_suph
 			// 
 			this->lbl_id_suph->AutoSize = true;
-			this->lbl_id_suph->Location = System::Drawing::Point(313, 75);
+			this->lbl_id_suph->Location = System::Drawing::Point(309, 123);
 			this->lbl_id_suph->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_id_suph->Name = L"lbl_id_suph";
 			this->lbl_id_suph->Size = System::Drawing::Size(95, 16);
 			this->lbl_id_suph->TabIndex = 44;
 			this->lbl_id_suph->Text = L"Id du supérieur";
+			this->lbl_id_suph->Click += gcnew System::EventHandler(this, &PagePersonnel::lbl_id_suph_Click);
 			// 
 			// txt_id_adresse
 			// 
-			this->txt_id_adresse->Location = System::Drawing::Point(319, 155);
+			this->txt_id_adresse->Location = System::Drawing::Point(315, 203);
 			this->txt_id_adresse->Margin = System::Windows::Forms::Padding(4);
 			this->txt_id_adresse->Name = L"txt_id_adresse";
 			this->txt_id_adresse->Size = System::Drawing::Size(236, 22);
 			this->txt_id_adresse->TabIndex = 47;
+			this->txt_id_adresse->TextChanged += gcnew System::EventHandler(this, &PagePersonnel::txt_id_adresse_TextChanged);
 			// 
 			// lbl_id_adresse
 			// 
 			this->lbl_id_adresse->AutoSize = true;
-			this->lbl_id_adresse->Location = System::Drawing::Point(314, 135);
+			this->lbl_id_adresse->Location = System::Drawing::Point(310, 183);
 			this->lbl_id_adresse->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_id_adresse->Name = L"lbl_id_adresse";
 			this->lbl_id_adresse->Size = System::Drawing::Size(96, 16);
 			this->lbl_id_adresse->TabIndex = 46;
 			this->lbl_id_adresse->Text = L"Id de l\'adresse";
+			this->lbl_id_adresse->Click += gcnew System::EventHandler(this, &PagePersonnel::lbl_id_adresse_Click);
 			// 
 			// dt_date_naissance
 			// 
-			this->dt_date_naissance->Location = System::Drawing::Point(36, 210);
+			this->dt_date_naissance->Location = System::Drawing::Point(32, 258);
 			this->dt_date_naissance->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dt_date_naissance->Name = L"dt_date_naissance";
 			this->dt_date_naissance->Size = System::Drawing::Size(233, 22);
 			this->dt_date_naissance->TabIndex = 48;
+			this->dt_date_naissance->ValueChanged += gcnew System::EventHandler(this, &PagePersonnel::dt_date_naissance_ValueChanged);
 			// 
 			// dt_date_embauche
 			// 
-			this->dt_date_embauche->Location = System::Drawing::Point(317, 36);
+			this->dt_date_embauche->Location = System::Drawing::Point(313, 84);
 			this->dt_date_embauche->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dt_date_embauche->Name = L"dt_date_embauche";
 			this->dt_date_embauche->Size = System::Drawing::Size(239, 22);
 			this->dt_date_embauche->TabIndex = 49;
+			this->dt_date_embauche->ValueChanged += gcnew System::EventHandler(this, &PagePersonnel::dt_date_embauche_ValueChanged);
 			// 
 			// label1
 			// 
@@ -406,12 +428,13 @@ namespace ProjetPOO {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Arial", 7.8F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(36, 308);
+			this->label1->Location = System::Drawing::Point(32, 356);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(42, 16);
 			this->label1->TabIndex = 50;
 			this->label1->Text = L"Début";
+			this->label1->Click += gcnew System::EventHandler(this, &PagePersonnel::label1_Click);
 			// 
 			// label2
 			// 
@@ -419,12 +442,13 @@ namespace ProjetPOO {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Arial", 7.8F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(235, 308);
+			this->label2->Location = System::Drawing::Point(231, 356);
 			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(25, 16);
 			this->label2->TabIndex = 51;
 			this->label2->Text = L"Fin";
+			this->label2->Click += gcnew System::EventHandler(this, &PagePersonnel::label2_Click);
 			// 
 			// label3
 			// 
@@ -432,12 +456,13 @@ namespace ProjetPOO {
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Arial", 7.8F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(87, 281);
+			this->label3->Location = System::Drawing::Point(83, 329);
 			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(66, 16);
 			this->label3->TabIndex = 52;
 			this->label3->Text = L"Précédent";
+			this->label3->Click += gcnew System::EventHandler(this, &PagePersonnel::label3_Click);
 			// 
 			// label4
 			// 
@@ -445,19 +470,45 @@ namespace ProjetPOO {
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Arial", 7.8F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(160, 281);
+			this->label4->Location = System::Drawing::Point(156, 329);
 			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(50, 16);
 			this->label4->TabIndex = 53;
 			this->label4->Text = L"Suivant";
+			this->label4->Click += gcnew System::EventHandler(this, &PagePersonnel::label4_Click);
+			// 
+			// panel1
+			// 
+			this->panel1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->panel1->BackColor = System::Drawing::Color::White;
+			this->panel1->Controls->Add(this->label5);
+			this->panel1->Location = System::Drawing::Point(-24, -9);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(620, 56);
+			this->panel1->TabIndex = 54;
+			// 
+			// label5
+			// 
+			this->label5->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label5->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->label5->Location = System::Drawing::Point(153, 13);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(315, 39);
+			this->label5->TabIndex = 7;
+			this->label5->Text = L"Gestion du Personnel";
 			// 
 			// PagePersonnel
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
-			this->ClientSize = System::Drawing::Size(584, 454);
+			this->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
+			this->ClientSize = System::Drawing::Size(584, 488);
+			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
@@ -489,10 +540,12 @@ namespace ProjetPOO {
 			this->Controls->Add(this->txt_id);
 			this->Controls->Add(this->btn_first);
 			this->Margin = System::Windows::Forms::Padding(2);
-			this->MaximumSize = System::Drawing::Size(602, 501);
+			this->MaximumSize = System::Drawing::Size(602, 600);
 			this->MinimumSize = System::Drawing::Size(602, 501);
 			this->Name = L"PagePersonnel";
 			this->Load += gcnew System::EventHandler(this, &PagePersonnel::PagePerso_Load);
+			this->panel1->ResumeLayout(false);
+			this->panel1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -597,6 +650,48 @@ if (this->mode == "nouveau")
 	}
 }
 private: System::Void txt_prenom_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void txt_message_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void lbl_message_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void DebugBox_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void debugText_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void dt_date_naissance_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void lbl_date_naissance_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void txt_id_adresse_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void lbl_id_adresse_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void lbl_prenom_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void txt_nom_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void lbl_nom_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void lbl_id_suph_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void txt_id_suph_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void dt_date_embauche_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void lbl_date_embauche_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void txt_id_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void lbl_id_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

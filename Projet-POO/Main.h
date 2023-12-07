@@ -49,6 +49,12 @@ namespace ProjetPOO {
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Panel^ panel2;
+
 
 
 
@@ -78,13 +84,20 @@ namespace ProjetPOO {
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
+			this->panel1->SuspendLayout();
+			this->panel2->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// bouton_page_clients
 			// 
-			this->bouton_page_clients->Location = System::Drawing::Point(68, 114);
+			this->bouton_page_clients->Location = System::Drawing::Point(68, 116);
 			this->bouton_page_clients->Margin = System::Windows::Forms::Padding(2);
 			this->bouton_page_clients->Name = L"bouton_page_clients";
 			this->bouton_page_clients->Size = System::Drawing::Size(142, 38);
@@ -95,7 +108,7 @@ namespace ProjetPOO {
 			// 
 			// bouton_page_statistiques
 			// 
-			this->bouton_page_statistiques->Location = System::Drawing::Point(68, 215);
+			this->bouton_page_statistiques->Location = System::Drawing::Point(68, 219);
 			this->bouton_page_statistiques->Margin = System::Windows::Forms::Padding(2);
 			this->bouton_page_statistiques->Name = L"bouton_page_statistiques";
 			this->bouton_page_statistiques->Size = System::Drawing::Size(223, 38);
@@ -106,17 +119,17 @@ namespace ProjetPOO {
 			// 
 			// bouton_page_commande
 			// 
-			this->bouton_page_commande->Location = System::Drawing::Point(215, 114);
+			this->bouton_page_commande->Location = System::Drawing::Point(215, 116);
 			this->bouton_page_commande->Name = L"bouton_page_commande";
 			this->bouton_page_commande->Size = System::Drawing::Size(166, 38);
 			this->bouton_page_commande->TabIndex = 2;
-			this->bouton_page_commande->Text = L"Gestion Commandes";
+			this->bouton_page_commande->Text = L"Gestion Commande";
 			this->bouton_page_commande->UseVisualStyleBackColor = true;
 			this->bouton_page_commande->Click += gcnew System::EventHandler(this, &Main::bouton_page_commande_Click);
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(388, 114);
+			this->button1->Location = System::Drawing::Point(388, 116);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(146, 38);
 			this->button1->TabIndex = 3;
@@ -127,18 +140,18 @@ namespace ProjetPOO {
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(68, 74);
+			this->pictureBox1->Location = System::Drawing::Point(12, 78);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(466, 12);
+			this->pictureBox1->Size = System::Drawing::Size(580, 13);
 			this->pictureBox1->TabIndex = 4;
 			this->pictureBox1->TabStop = false;
 			// 
 			// pictureBox2
 			// 
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
-			this->pictureBox2->Location = System::Drawing::Point(68, 177);
+			this->pictureBox2->Location = System::Drawing::Point(12, 181);
 			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(466, 12);
+			this->pictureBox2->Size = System::Drawing::Size(580, 13);
 			this->pictureBox2->TabIndex = 5;
 			this->pictureBox2->TabStop = false;
 			// 
@@ -148,18 +161,19 @@ namespace ProjetPOO {
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 22.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label1->BackColor = System::Drawing::Color::Transparent;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label1->Location = System::Drawing::Point(187, 22);
+			this->label1->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->label1->Location = System::Drawing::Point(225, 17);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(201, 48);
+			this->label1->Size = System::Drawing::Size(186, 44);
 			this->label1->TabIndex = 6;
 			this->label1->Text = L"Bienvenue";
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(295, 215);
+			this->button2->Location = System::Drawing::Point(295, 219);
 			this->button2->Margin = System::Windows::Forms::Padding(2);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(239, 38);
@@ -168,14 +182,75 @@ namespace ProjetPOO {
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &Main::bouton_page_stock);
 			// 
+			// panel1
+			// 
+			this->panel1->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->panel1->Controls->Add(this->label4);
+			this->panel1->Controls->Add(this->label3);
+			this->panel1->Controls->Add(this->label2);
+			this->panel1->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->panel1->Location = System::Drawing::Point(-18, 288);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(642, 46);
+			this->panel1->TabIndex = 8;
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::Color::Transparent;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->label2->Location = System::Drawing::Point(26, 10);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(122, 20);
+			this->label2->TabIndex = 0;
+			this->label2->Text = L"CESI Company";
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->BackColor = System::Drawing::Color::Transparent;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->label3->Location = System::Drawing::Point(517, 11);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(93, 20);
+			this->label3->TabIndex = 1;
+			this->label3->Text = L"Version 5.1";
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->BackColor = System::Drawing::Color::Transparent;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label4->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->label4->Location = System::Drawing::Point(247, 15);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(155, 16);
+			this->label4->TabIndex = 2;
+			this->label4->Text = L"Contact : support@cesi.fr";
+			// 
+			// panel2
+			// 
+			this->panel2->BackColor = System::Drawing::Color::White;
+			this->panel2->Controls->Add(this->label1);
+			this->panel2->Location = System::Drawing::Point(-24, -16);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(648, 63);
+			this->panel2->TabIndex = 9;
+			// 
 			// Main
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->ClientSize = System::Drawing::Size(604, 312);
+			this->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
+			this->ClientSize = System::Drawing::Size(618, 329);
+			this->Controls->Add(this->panel2);
+			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->button2);
-			this->Controls->Add(this->label1);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->button1);
@@ -183,15 +258,18 @@ namespace ProjetPOO {
 			this->Controls->Add(this->bouton_page_statistiques);
 			this->Controls->Add(this->bouton_page_clients);
 			this->Margin = System::Windows::Forms::Padding(2);
-			this->MaximumSize = System::Drawing::Size(622, 359);
-			this->MinimumSize = System::Drawing::Size(622, 359);
+			this->MaximumSize = System::Drawing::Size(636, 376);
+			this->MinimumSize = System::Drawing::Size(636, 376);
 			this->Name = L"Main";
 			this->Text = L"Main";
 			this->Load += gcnew System::EventHandler(this, &Main::Main_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
+			this->panel1->ResumeLayout(false);
+			this->panel1->PerformLayout();
+			this->panel2->ResumeLayout(false);
+			this->panel2->PerformLayout();
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
@@ -219,6 +297,8 @@ namespace ProjetPOO {
 	ProjetPOO::PageStock page_stock;
 	page_stock.ShowDialog();
 	}
+
+
 
 };
 }

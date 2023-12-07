@@ -69,6 +69,8 @@ namespace ProjetPOO {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Label^ label5;
 
 
 
@@ -107,12 +109,15 @@ namespace ProjetPOO {
 			   this->label2 = (gcnew System::Windows::Forms::Label());
 			   this->label3 = (gcnew System::Windows::Forms::Label());
 			   this->label4 = (gcnew System::Windows::Forms::Label());
+			   this->panel1 = (gcnew System::Windows::Forms::Panel());
+			   this->label5 = (gcnew System::Windows::Forms::Label());
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_adresses))->BeginInit();
+			   this->panel1->SuspendLayout();
 			   this->SuspendLayout();
 			   // 
 			   // btn_first
 			   // 
-			   this->btn_first->Location = System::Drawing::Point(30, 178);
+			   this->btn_first->Location = System::Drawing::Point(30, 226);
 			   this->btn_first->Margin = System::Windows::Forms::Padding(4);
 			   this->btn_first->Name = L"btn_first";
 			   this->btn_first->Size = System::Drawing::Size(49, 53);
@@ -123,7 +128,7 @@ namespace ProjetPOO {
 			   // 
 			   // txt_id
 			   // 
-			   this->txt_id->Location = System::Drawing::Point(29, 32);
+			   this->txt_id->Location = System::Drawing::Point(29, 80);
 			   this->txt_id->Margin = System::Windows::Forms::Padding(4);
 			   this->txt_id->Name = L"txt_id";
 			   this->txt_id->ReadOnly = true;
@@ -132,7 +137,7 @@ namespace ProjetPOO {
 			   // 
 			   // txt_nom
 			   // 
-			   this->txt_nom->Location = System::Drawing::Point(29, 87);
+			   this->txt_nom->Location = System::Drawing::Point(29, 135);
 			   this->txt_nom->Margin = System::Windows::Forms::Padding(4);
 			   this->txt_nom->Name = L"txt_nom";
 			   this->txt_nom->Size = System::Drawing::Size(236, 22);
@@ -141,7 +146,7 @@ namespace ProjetPOO {
 			   // lbl_id
 			   // 
 			   this->lbl_id->AutoSize = true;
-			   this->lbl_id->Location = System::Drawing::Point(25, 12);
+			   this->lbl_id->Location = System::Drawing::Point(25, 60);
 			   this->lbl_id->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			   this->lbl_id->Name = L"lbl_id";
 			   this->lbl_id->Size = System::Drawing::Size(18, 16);
@@ -151,7 +156,7 @@ namespace ProjetPOO {
 			   // lbl_nom
 			   // 
 			   this->lbl_nom->AutoSize = true;
-			   this->lbl_nom->Location = System::Drawing::Point(25, 68);
+			   this->lbl_nom->Location = System::Drawing::Point(25, 116);
 			   this->lbl_nom->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			   this->lbl_nom->Name = L"lbl_nom";
 			   this->lbl_nom->Size = System::Drawing::Size(36, 16);
@@ -161,7 +166,7 @@ namespace ProjetPOO {
 			   // lbl_prenom
 			   // 
 			   this->lbl_prenom->AutoSize = true;
-			   this->lbl_prenom->Location = System::Drawing::Point(25, 126);
+			   this->lbl_prenom->Location = System::Drawing::Point(25, 174);
 			   this->lbl_prenom->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			   this->lbl_prenom->Name = L"lbl_prenom";
 			   this->lbl_prenom->Size = System::Drawing::Size(54, 16);
@@ -170,7 +175,7 @@ namespace ProjetPOO {
 			   // 
 			   // txt_prenom
 			   // 
-			   this->txt_prenom->Location = System::Drawing::Point(29, 146);
+			   this->txt_prenom->Location = System::Drawing::Point(29, 194);
 			   this->txt_prenom->Margin = System::Windows::Forms::Padding(4);
 			   this->txt_prenom->Name = L"txt_prenom";
 			   this->txt_prenom->Size = System::Drawing::Size(236, 22);
@@ -178,7 +183,7 @@ namespace ProjetPOO {
 			   // 
 			   // btn_previous
 			   // 
-			   this->btn_previous->Location = System::Drawing::Point(79, 178);
+			   this->btn_previous->Location = System::Drawing::Point(79, 226);
 			   this->btn_previous->Margin = System::Windows::Forms::Padding(4);
 			   this->btn_previous->Name = L"btn_previous";
 			   this->btn_previous->Size = System::Drawing::Size(69, 26);
@@ -189,7 +194,7 @@ namespace ProjetPOO {
 			   // 
 			   // btn_last
 			   // 
-			   this->btn_last->Location = System::Drawing::Point(215, 178);
+			   this->btn_last->Location = System::Drawing::Point(215, 226);
 			   this->btn_last->Margin = System::Windows::Forms::Padding(4);
 			   this->btn_last->Name = L"btn_last";
 			   this->btn_last->Size = System::Drawing::Size(48, 53);
@@ -200,7 +205,7 @@ namespace ProjetPOO {
 			   // 
 			   // btn_next
 			   // 
-			   this->btn_next->Location = System::Drawing::Point(148, 178);
+			   this->btn_next->Location = System::Drawing::Point(148, 226);
 			   this->btn_next->Margin = System::Windows::Forms::Padding(4);
 			   this->btn_next->Name = L"btn_next";
 			   this->btn_next->Size = System::Drawing::Size(67, 26);
@@ -216,17 +221,17 @@ namespace ProjetPOO {
 				   | System::Windows::Forms::AnchorStyles::Right));
 			   this->dgv_adresses->BackgroundColor = System::Drawing::SystemColors::ButtonFace;
 			   this->dgv_adresses->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			   this->dgv_adresses->Location = System::Drawing::Point(288, 30);
+			   this->dgv_adresses->Location = System::Drawing::Point(288, 80);
 			   this->dgv_adresses->Margin = System::Windows::Forms::Padding(4);
 			   this->dgv_adresses->Name = L"dgv_adresses";
 			   this->dgv_adresses->RowHeadersWidth = 82;
-			   this->dgv_adresses->Size = System::Drawing::Size(606, 298);
+			   this->dgv_adresses->Size = System::Drawing::Size(606, 352);
 			   this->dgv_adresses->TabIndex = 10;
 			   // 
 			   // lbl_adresse
 			   // 
 			   this->lbl_adresse->AutoSize = true;
-			   this->lbl_adresse->Location = System::Drawing::Point(284, 10);
+			   this->lbl_adresse->Location = System::Drawing::Point(284, 58);
 			   this->lbl_adresse->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			   this->lbl_adresse->Name = L"lbl_adresse";
 			   this->lbl_adresse->Size = System::Drawing::Size(65, 16);
@@ -235,7 +240,7 @@ namespace ProjetPOO {
 			   // 
 			   // btn_nouveau
 			   // 
-			   this->btn_nouveau->Location = System::Drawing::Point(28, 260);
+			   this->btn_nouveau->Location = System::Drawing::Point(28, 308);
 			   this->btn_nouveau->Margin = System::Windows::Forms::Padding(4);
 			   this->btn_nouveau->Name = L"btn_nouveau";
 			   this->btn_nouveau->Size = System::Drawing::Size(80, 34);
@@ -246,7 +251,7 @@ namespace ProjetPOO {
 			   // 
 			   // btn_maj
 			   // 
-			   this->btn_maj->Location = System::Drawing::Point(107, 260);
+			   this->btn_maj->Location = System::Drawing::Point(107, 308);
 			   this->btn_maj->Margin = System::Windows::Forms::Padding(4);
 			   this->btn_maj->Name = L"btn_maj";
 			   this->btn_maj->Size = System::Drawing::Size(76, 34);
@@ -257,7 +262,7 @@ namespace ProjetPOO {
 			   // 
 			   // btn_sup
 			   // 
-			   this->btn_sup->Location = System::Drawing::Point(182, 260);
+			   this->btn_sup->Location = System::Drawing::Point(182, 308);
 			   this->btn_sup->Margin = System::Windows::Forms::Padding(4);
 			   this->btn_sup->Name = L"btn_sup";
 			   this->btn_sup->Size = System::Drawing::Size(86, 34);
@@ -268,7 +273,7 @@ namespace ProjetPOO {
 			   // 
 			   // btn_enr
 			   // 
-			   this->btn_enr->Location = System::Drawing::Point(29, 296);
+			   this->btn_enr->Location = System::Drawing::Point(29, 344);
 			   this->btn_enr->Margin = System::Windows::Forms::Padding(4);
 			   this->btn_enr->Name = L"btn_enr";
 			   this->btn_enr->Size = System::Drawing::Size(239, 34);
@@ -282,7 +287,7 @@ namespace ProjetPOO {
 			   this->lbl_message->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
 				   | System::Windows::Forms::AnchorStyles::Right));
 			   this->lbl_message->AutoSize = true;
-			   this->lbl_message->Location = System::Drawing::Point(25, 355);
+			   this->lbl_message->Location = System::Drawing::Point(25, 459);
 			   this->lbl_message->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			   this->lbl_message->Name = L"lbl_message";
 			   this->lbl_message->Size = System::Drawing::Size(64, 16);
@@ -293,7 +298,7 @@ namespace ProjetPOO {
 			   // 
 			   this->txt_message->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
 				   | System::Windows::Forms::AnchorStyles::Right));
-			   this->txt_message->Location = System::Drawing::Point(29, 374);
+			   this->txt_message->Location = System::Drawing::Point(29, 478);
 			   this->txt_message->Margin = System::Windows::Forms::Padding(4);
 			   this->txt_message->Multiline = true;
 			   this->txt_message->Name = L"txt_message";
@@ -303,7 +308,7 @@ namespace ProjetPOO {
 			   // debugText
 			   // 
 			   this->debugText->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			   this->debugText->Location = System::Drawing::Point(748, 342);
+			   this->debugText->Location = System::Drawing::Point(748, 446);
 			   this->debugText->Margin = System::Windows::Forms::Padding(4);
 			   this->debugText->Name = L"debugText";
 			   this->debugText->Size = System::Drawing::Size(145, 22);
@@ -313,7 +318,7 @@ namespace ProjetPOO {
 			   // 
 			   this->DebugBox->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 			   this->DebugBox->AutoSize = true;
-			   this->DebugBox->Location = System::Drawing::Point(680, 346);
+			   this->DebugBox->Location = System::Drawing::Point(680, 450);
 			   this->DebugBox->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			   this->DebugBox->Name = L"DebugBox";
 			   this->DebugBox->Size = System::Drawing::Size(54, 16);
@@ -325,7 +330,7 @@ namespace ProjetPOO {
 			   this->label1->AutoSize = true;
 			   this->label1->Font = (gcnew System::Drawing::Font(L"Arial", 7.8F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
-			   this->label1->Location = System::Drawing::Point(33, 232);
+			   this->label1->Location = System::Drawing::Point(33, 280);
 			   this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			   this->label1->Name = L"label1";
 			   this->label1->Size = System::Drawing::Size(42, 16);
@@ -338,7 +343,7 @@ namespace ProjetPOO {
 			   this->label2->AutoSize = true;
 			   this->label2->Font = (gcnew System::Drawing::Font(L"Arial", 7.8F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
-			   this->label2->Location = System::Drawing::Point(227, 232);
+			   this->label2->Location = System::Drawing::Point(227, 280);
 			   this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			   this->label2->Name = L"label2";
 			   this->label2->Size = System::Drawing::Size(25, 16);
@@ -350,7 +355,7 @@ namespace ProjetPOO {
 			   this->label3->AutoSize = true;
 			   this->label3->Font = (gcnew System::Drawing::Font(L"Arial", 7.8F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
-			   this->label3->Location = System::Drawing::Point(81, 205);
+			   this->label3->Location = System::Drawing::Point(81, 253);
 			   this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			   this->label3->Name = L"label3";
 			   this->label3->Size = System::Drawing::Size(66, 16);
@@ -362,19 +367,44 @@ namespace ProjetPOO {
 			   this->label4->AutoSize = true;
 			   this->label4->Font = (gcnew System::Drawing::Font(L"Arial", 7.8F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
-			   this->label4->Location = System::Drawing::Point(157, 205);
+			   this->label4->Location = System::Drawing::Point(157, 253);
 			   this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			   this->label4->Name = L"label4";
 			   this->label4->Size = System::Drawing::Size(50, 16);
 			   this->label4->TabIndex = 23;
 			   this->label4->Text = L"Suivant";
 			   // 
+			   // panel1
+			   // 
+			   this->panel1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				   | System::Windows::Forms::AnchorStyles::Right));
+			   this->panel1->BackColor = System::Drawing::Color::White;
+			   this->panel1->Controls->Add(this->label5);
+			   this->panel1->Location = System::Drawing::Point(-16, -15);
+			   this->panel1->Name = L"panel1";
+			   this->panel1->Size = System::Drawing::Size(948, 61);
+			   this->panel1->TabIndex = 24;
+			   // 
+			   // label5
+			   // 
+			   this->label5->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			   this->label5->AutoSize = true;
+			   this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->label5->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			   this->label5->Location = System::Drawing::Point(323, 19);
+			   this->label5->Name = L"label5";
+			   this->label5->Size = System::Drawing::Size(284, 39);
+			   this->label5->TabIndex = 25;
+			   this->label5->Text = L"Gestion des Clients";
+			   // 
 			   // PageClient
 			   // 
 			   this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			   this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			   this->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
-			   this->ClientSize = System::Drawing::Size(925, 449);
+			   this->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
+			   this->ClientSize = System::Drawing::Size(925, 553);
+			   this->Controls->Add(this->panel1);
 			   this->Controls->Add(this->label4);
 			   this->Controls->Add(this->label3);
 			   this->Controls->Add(this->label2);
@@ -400,12 +430,14 @@ namespace ProjetPOO {
 			   this->Controls->Add(this->txt_id);
 			   this->Controls->Add(this->btn_first);
 			   this->Margin = System::Windows::Forms::Padding(4);
-			   this->MaximumSize = System::Drawing::Size(943, 496);
+			   this->MaximumSize = System::Drawing::Size(943, 600);
 			   this->MinimumSize = System::Drawing::Size(943, 496);
 			   this->Name = L"PageClient";
 			   this->Text = L"PageClient";
 			   this->Load += gcnew System::EventHandler(this, &PageClient::PageClient_Load);
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_adresses))->EndInit();
+			   this->panel1->ResumeLayout(false);
+			   this->panel1->PerformLayout();
 			   this->ResumeLayout(false);
 			   this->PerformLayout();
 
@@ -558,5 +590,6 @@ namespace ProjetPOO {
 		   //}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
+
 };
 }
