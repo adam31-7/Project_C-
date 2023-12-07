@@ -31,6 +31,8 @@ namespace NS_SVC
 		DataSet^ listeClients(String^);
 		DataSet^ listeAdresses(String^);
 		void ajouter(int, int, DateTime, DateTime, DateTime, DateTime, String^, int);
+		void modifier(String^, int, int, DateTime, DateTime, DateTime, DateTime, String^, int);
+		void supprimer(String^);
 	};
 }
 

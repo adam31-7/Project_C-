@@ -34,12 +34,21 @@ namespace NS_Composants
 
 	String^ mappTableCommande::UPDATE(void)
 	{
-		return "UPDATE Commande SET Reference = '" + this->getReference() + "', Id_Adresse_livraison = '" + this->getIdAdresseLivraison() + "', Id_Adresse_facturation = '" + this->getIdAdresseFacturation() + "', Date_emission = '" + this->getDateEmission() + "', Date_livraison = '" + this->getDateLivraison() + "', Date_paiement = '" + this->getDatePaiement() + "', Date_reglement = '" + this->getDateReglement() + "', Moyen_reglement = '" + this->getMoyenReglement() + "', Id_Client = '" + this->getIdClient() + "' WHERE Reference = '" + this->getReference() + "'";
+		return "UPDATE Commande SET "
+			+ "ID_adresse_livraison = '" + this->getIdAdresseLivraison() + "', "
+			+ "ID_adresse_facturation = '" + this->getIdAdresseFacturation() + "', "
+			+ "Date_emission = '" + this->getDateEmission() + "', "
+			+ "Date_livraison_prevue = '" + this->getDateLivraison() + "', "
+			+ "Date_paiement = '" + this->getDatePaiement() + "', "
+			+ "Date_reglement = '" + this->getDateReglement() + "', "
+			+ "MoyenPaie = '" + this->getMoyenReglement() + "', "
+			+ "ID_client = '" + this->getIdClient() + "' "
+			+ "WHERE Ref_com = '" + this->getReference() + "'";
 	}
 
 	String^ mappTableCommande::DELETE(void)
 	{
-		return "DELETE FROM Commande WHERE Reference = '" + this->getReference() + "'";
+		return "DELETE FROM Commande WHERE Ref_com = '" + this->getReference() + "'";
 	}
 
 	void mappTableCommande::setReference(String^ Reference)

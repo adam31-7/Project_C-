@@ -82,8 +82,24 @@ void gestionCommandes::ajouter(int Id_Adresse_livraison, int Id_Adresse_facturat
 
 		this->commande->setReference(reference);
 
-		System::Windows::Forms::MessageBox::Show(this->commande->INSERT());
-
 		this->cad->actionRows(this->commande->INSERT());
 	}
+void gestionCommandes::modifier(String^ Reference, int Id_Adresse_livraison, int Id_Adresse_facturation, DateTime Date_emission, DateTime Date_livraison, DateTime Date_paiement, DateTime Date_reglement, String^ Moyen_reglement, int Id_Client)
+{
+		this->commande->setReference(Reference);
+		this->commande->setIdAdresseLivraison(Id_Adresse_livraison);
+		this->commande->setIdAdresseFacturation(Id_Adresse_facturation);
+		this->commande->setDateEmission(Date_emission);
+		this->commande->setDateLivraison(Date_livraison);
+		this->commande->setDatePaiement(Date_paiement);
+		this->commande->setDateReglement(Date_reglement);
+		this->commande->setMoyenReglement(Moyen_reglement);
+		this->commande->setIdClient(Id_Client);
+
+		this->cad->actionRows(this->commande->UPDATE());
+	}
+void gestionCommandes::supprimer(String^ Reference) {
+		this->commande->setReference(Reference);
+		this->cad->actionRows(this->commande->DELETE());
+}
 }
