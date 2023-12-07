@@ -157,10 +157,11 @@ namespace ProjetPOO {
 			// 
 			// label3
 			// 
+			this->label3->Anchor = System::Windows::Forms::AnchorStyles::Top;
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(260, 7);
+			this->label3->Location = System::Drawing::Point(493, 7);
 			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(149, 29);
@@ -172,7 +173,7 @@ namespace ProjetPOO {
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.999999F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(62, 89);
+			this->label4->Location = System::Drawing::Point(11, 88);
 			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(170, 17);
@@ -181,10 +182,11 @@ namespace ProjetPOO {
 			// 
 			// label5
 			// 
+			this->label5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.999999F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(416, 89);
+			this->label5->Location = System::Drawing::Point(945, 88);
 			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(145, 17);
@@ -196,7 +198,7 @@ namespace ProjetPOO {
 			this->label6->AutoSize = true;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.999999F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(2, 51);
+			this->label6->Location = System::Drawing::Point(12, 54);
 			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(249, 17);
@@ -205,10 +207,11 @@ namespace ProjetPOO {
 			// 
 			// label10
 			// 
+			this->label10->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
 			this->label10->AutoSize = true;
 			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.999999F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label10->Location = System::Drawing::Point(9, 275);
+			this->label10->Location = System::Drawing::Point(11, 572);
 			this->label10->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(105, 17);
@@ -217,7 +220,7 @@ namespace ProjetPOO {
 			// 
 			// txt_CA
 			// 
-			this->txt_CA->Location = System::Drawing::Point(229, 51);
+			this->txt_CA->Location = System::Drawing::Point(265, 54);
 			this->txt_CA->Margin = System::Windows::Forms::Padding(2);
 			this->txt_CA->Name = L"txt_CA";
 			this->txt_CA->Size = System::Drawing::Size(154, 20);
@@ -225,7 +228,8 @@ namespace ProjetPOO {
 			// 
 			// txt_ID_Client
 			// 
-			this->txt_ID_Client->Location = System::Drawing::Point(108, 275);
+			this->txt_ID_Client->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			this->txt_ID_Client->Location = System::Drawing::Point(129, 571);
 			this->txt_ID_Client->Margin = System::Windows::Forms::Padding(2);
 			this->txt_ID_Client->Name = L"txt_ID_Client";
 			this->txt_ID_Client->Size = System::Drawing::Size(132, 20);
@@ -233,10 +237,11 @@ namespace ProjetPOO {
 			// 
 			// label1
 			// 
+			this->label1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.999999F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(9, 302);
+			this->label1->Location = System::Drawing::Point(11, 599);
 			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(461, 17);
@@ -245,7 +250,8 @@ namespace ProjetPOO {
 			// 
 			// btn_valider
 			// 
-			this->btn_valider->Location = System::Drawing::Point(244, 273);
+			this->btn_valider->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			this->btn_valider->Location = System::Drawing::Point(265, 570);
 			this->btn_valider->Margin = System::Windows::Forms::Padding(2);
 			this->btn_valider->Name = L"btn_valider";
 			this->btn_valider->Size = System::Drawing::Size(67, 22);
@@ -256,29 +262,34 @@ namespace ProjetPOO {
 			// 
 			// dgv_meilleur_art
 			// 
+			this->dgv_meilleur_art->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left));
 			this->dgv_meilleur_art->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dgv_meilleur_art->Location = System::Drawing::Point(4, 107);
+			this->dgv_meilleur_art->Location = System::Drawing::Point(14, 107);
 			this->dgv_meilleur_art->Margin = System::Windows::Forms::Padding(2);
 			this->dgv_meilleur_art->Name = L"dgv_meilleur_art";
 			this->dgv_meilleur_art->RowHeadersWidth = 51;
 			this->dgv_meilleur_art->RowTemplate->Height = 24;
-			this->dgv_meilleur_art->Size = System::Drawing::Size(279, 122);
+			this->dgv_meilleur_art->Size = System::Drawing::Size(513, 404);
 			this->dgv_meilleur_art->TabIndex = 30;
 			// 
 			// dgv_pire_art
 			// 
+			this->dgv_pire_art->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Right));
 			this->dgv_pire_art->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dgv_pire_art->Location = System::Drawing::Point(335, 107);
+			this->dgv_pire_art->Location = System::Drawing::Point(573, 107);
 			this->dgv_pire_art->Margin = System::Windows::Forms::Padding(2);
 			this->dgv_pire_art->Name = L"dgv_pire_art";
 			this->dgv_pire_art->RowHeadersWidth = 51;
 			this->dgv_pire_art->RowTemplate->Height = 24;
-			this->dgv_pire_art->Size = System::Drawing::Size(279, 122);
+			this->dgv_pire_art->Size = System::Drawing::Size(517, 404);
 			this->dgv_pire_art->TabIndex = 31;
 			// 
 			// afficherMeilleur
 			// 
-			this->afficherMeilleur->Location = System::Drawing::Point(212, 234);
+			this->afficherMeilleur->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
+			this->afficherMeilleur->Location = System::Drawing::Point(456, 515);
 			this->afficherMeilleur->Margin = System::Windows::Forms::Padding(2);
 			this->afficherMeilleur->Name = L"afficherMeilleur";
 			this->afficherMeilleur->Size = System::Drawing::Size(71, 22);
@@ -289,7 +300,8 @@ namespace ProjetPOO {
 			// 
 			// AfficherPire
 			// 
-			this->AfficherPire->Location = System::Drawing::Point(543, 234);
+			this->AfficherPire->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
+			this->AfficherPire->Location = System::Drawing::Point(573, 515);
 			this->AfficherPire->Margin = System::Windows::Forms::Padding(2);
 			this->AfficherPire->Name = L"AfficherPire";
 			this->AfficherPire->Size = System::Drawing::Size(71, 22);
@@ -300,13 +312,15 @@ namespace ProjetPOO {
 			// 
 			// dgv_client
 			// 
+			this->dgv_client->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
 			this->dgv_client->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dgv_client->Location = System::Drawing::Point(4, 321);
+			this->dgv_client->Location = System::Drawing::Point(12, 618);
 			this->dgv_client->Margin = System::Windows::Forms::Padding(2);
 			this->dgv_client->Name = L"dgv_client";
 			this->dgv_client->RowHeadersWidth = 51;
 			this->dgv_client->RowTemplate->Height = 24;
-			this->dgv_client->Size = System::Drawing::Size(610, 57);
+			this->dgv_client->Size = System::Drawing::Size(1078, 84);
 			this->dgv_client->TabIndex = 34;
 			// 
 			// PageStats
@@ -314,7 +328,7 @@ namespace ProjetPOO {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
-			this->ClientSize = System::Drawing::Size(634, 404);
+			this->ClientSize = System::Drawing::Size(1101, 713);
 			this->Controls->Add(this->dgv_client);
 			this->Controls->Add(this->AfficherPire);
 			this->Controls->Add(this->afficherMeilleur);
@@ -330,7 +344,6 @@ namespace ProjetPOO {
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
 			this->Margin = System::Windows::Forms::Padding(2);
-			this->MaximumSize = System::Drawing::Size(699, 443);
 			this->MinimumSize = System::Drawing::Size(650, 443);
 			this->Name = L"PageStats";
 			this->Load += gcnew System::EventHandler(this, &PageStats::PageStats_Load);
