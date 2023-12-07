@@ -7,23 +7,21 @@ NS_Composants::mappStats::mappStats(void)
 
 String^ NS_Composants::mappStats::getArticlePlusVendu(void)
 {
-	return "SELECT AC.Ref_Art,A.Nom_Art,SUM(CAST(AC.Quanti_CA AS DECIMAL)) AS TotalQuantitySold"
-		+ "FROM Article_Commande AS AC JOIN Article AS A ON AC.Ref_Art = A.Ref_Art GROUP BY AC.Ref_Art, A.Nom_Art"
-		+ "ORDER BY TotalQuantitySold DESC LIMIT 10;";
+	return "SELECT TOP 10 AC.Ref_Art,A.Nom_Art, SUM(CAST(AC.Quanti_CA AS DECIMAL)) AS TotalQuantitySold"
+		+ "FROM Article_Commande AS AC JOIN Article AS A ON AC.Ref_Art = A.Ref_Art GROUP BY AC.Ref_Art, A.Nom_Art ORDER BY TotalQuantitySold DESC;";
 }
 
 String^ NS_Composants::mappStats::getArticleMoinsVendu(void)
 {
-	return "SELECT AC.Ref_Art, A.Nom_Art, SUM(CAST(AC.Quanti_CA AS DECIMAL)) AS TotalQuantitySold"
-		+ "FROM Article_Commande AS AC JOIN Article AS A ON AC.Ref_Art = A.Ref_Art GROUP BY AC.Ref_Art, A.Nom_Art"
-		+ "ORDER BY TotalQuantitySold ASC LIMIT 10;";
+	return "SELECT TOP 10 AC.Ref_Art,A.Nom_Art, SUM(CAST(AC.Quanti_CA AS DECIMAL)) AS TotalQuantitySold"
+		+ "FROM Article_Commande AS AC JOIN Article AS A ON AC.Ref_Art = A.Ref_Art GROUP BY AC.Ref_Art, A.Nom_Art ORDER BY TotalQuantitySold ASC;";
 }
 
 
 String^ NS_Composants::mappStats::getMontantTotalClient(void)
 {
 	return "SELECT Client.ID_client, Client.Nom_Client, Client.Prenom_Client,"
-		+ "SUM(CAST(Article.Prix_HT_Art AS DECIMAL) * CAST(Article_Commande.Quanti_CA AS DECIMAL)) AS TotalAmountSpent"
+		+ "SUM(CAST(A.Prix_HT_Art AS DECIMAL) * CAST(AC.Quanti_CA AS DECIMAL)) AS TotalAmountSpent"
 		+ "FROM Client AS C"
 		+ "JOIN Commande AS Co ON C.ID_client = Co.ID_client"
 		+ "JOIN Article_Commande AS AC ON Co.Ref_com = AC.Ref_com"
@@ -35,14 +33,14 @@ String^ NS_Composants::mappStats::getMontantTotalClient(void)
 
 String^ NS_Composants::mappStats::CalculerValCommerciale(void)
 {
-	return "SELECT Article.Ref_Art,Article.Nom_Art,SUM(CAST(Article.QuantiteS_Art AS DECIMAL) * CAST(Article.Prix_HT_Art AS DECIMAL)) AS CommercialValue"
+	return "SELECT A.Ref_Art,Article.Nom_Art,SUM(CAST(A.QuantiteS_Art AS DECIMAL) * CAST(A.Prix_HT_Art AS DECIMAL)) AS CommercialValue"
 		+ "FROM Article AS A GROUP BY A.Ref_Art, A.Nom_Art;";
 }
 
 
 String^ NS_Composants::mappStats::CalculerValeurStock(void)
 {
-	return "SELECT SUM(CAST(Article.QuantiteS_Art AS DECIMAL) * CAST(Article.Prix_HT_Art AS DECIMAL)) AS TotalStockValue"
+	return "SELECT SUM(CAST(A.QuantiteS_Art AS DECIMAL) * CAST(A.Prix_HT_Art AS DECIMAL)) AS TotalStockValue"
 		+ "FROM Article AS A;";
 }
 
