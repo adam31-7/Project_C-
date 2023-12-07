@@ -63,8 +63,10 @@ namespace ProjetPOO {
 
 
 	private: System::Windows::Forms::Label^ label4;
-
 	private: System::Windows::Forms::Label^ label5;
+
+
+
 
 	private: System::Windows::Forms::Label^ label6;
 
@@ -85,6 +87,12 @@ namespace ProjetPOO {
 
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Button^ buttonID;
+	private: System::Windows::Forms::DataGridView^ dgv_meilleur_art;
+	private: System::Windows::Forms::DataGridView^ dgv_pire_art;
+	private: System::Windows::Forms::Button^ afficherMeilleur;
+	private: System::Windows::Forms::Button^ AfficherPire;
+
+
 
 
 
@@ -128,6 +136,12 @@ namespace ProjetPOO {
 			this->txt_ID_Client = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->buttonID = (gcnew System::Windows::Forms::Button());
+			this->dgv_meilleur_art = (gcnew System::Windows::Forms::DataGridView());
+			this->dgv_pire_art = (gcnew System::Windows::Forms::DataGridView());
+			this->afficherMeilleur = (gcnew System::Windows::Forms::Button());
+			this->AfficherPire = (gcnew System::Windows::Forms::Button());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_meilleur_art))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_pire_art))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label3
@@ -146,7 +160,7 @@ namespace ProjetPOO {
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.999999F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(82, 145);
+			this->label4->Location = System::Drawing::Point(82, 109);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(205, 20);
 			this->label4->TabIndex = 11;
@@ -157,7 +171,7 @@ namespace ProjetPOO {
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.999999F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(452, 145);
+			this->label5->Location = System::Drawing::Point(555, 109);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(174, 20);
 			this->label5->TabIndex = 13;
@@ -168,7 +182,7 @@ namespace ProjetPOO {
 			this->label6->AutoSize = true;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.999999F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(2, 95);
+			this->label6->Location = System::Drawing::Point(2, 63);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(297, 20);
 			this->label6->TabIndex = 14;
@@ -179,7 +193,7 @@ namespace ProjetPOO {
 			this->label10->AutoSize = true;
 			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.999999F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label10->Location = System::Drawing::Point(12, 329);
+			this->label10->Location = System::Drawing::Point(12, 338);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(126, 20);
 			this->label10->TabIndex = 23;
@@ -188,7 +202,7 @@ namespace ProjetPOO {
 			// 
 			// txt_MontantTC
 			// 
-			this->txt_MontantTC->Location = System::Drawing::Point(342, 363);
+			this->txt_MontantTC->Location = System::Drawing::Point(342, 372);
 			this->txt_MontantTC->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txt_MontantTC->Name = L"txt_MontantTC";
 			this->txt_MontantTC->Size = System::Drawing::Size(175, 22);
@@ -197,7 +211,7 @@ namespace ProjetPOO {
 			// 
 			// txt_CA
 			// 
-			this->txt_CA->Location = System::Drawing::Point(305, 95);
+			this->txt_CA->Location = System::Drawing::Point(305, 63);
 			this->txt_CA->Name = L"txt_CA";
 			this->txt_CA->Size = System::Drawing::Size(204, 22);
 			this->txt_CA->TabIndex = 26;
@@ -205,7 +219,7 @@ namespace ProjetPOO {
 			// 
 			// txt_ID_Client
 			// 
-			this->txt_ID_Client->Location = System::Drawing::Point(144, 329);
+			this->txt_ID_Client->Location = System::Drawing::Point(144, 338);
 			this->txt_ID_Client->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txt_ID_Client->Name = L"txt_ID_Client";
 			this->txt_ID_Client->Size = System::Drawing::Size(175, 22);
@@ -216,7 +230,7 @@ namespace ProjetPOO {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.999999F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(12, 363);
+			this->label1->Location = System::Drawing::Point(12, 372);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(324, 20);
 			this->label1->TabIndex = 28;
@@ -224,12 +238,50 @@ namespace ProjetPOO {
 			// 
 			// buttonID
 			// 
-			this->buttonID->Location = System::Drawing::Point(325, 327);
+			this->buttonID->Location = System::Drawing::Point(325, 336);
 			this->buttonID->Name = L"buttonID";
 			this->buttonID->Size = System::Drawing::Size(89, 27);
 			this->buttonID->TabIndex = 29;
 			this->buttonID->Text = L"Vailder";
 			this->buttonID->UseVisualStyleBackColor = true;
+			// 
+			// dgv_meilleur_art
+			// 
+			this->dgv_meilleur_art->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dgv_meilleur_art->Location = System::Drawing::Point(6, 132);
+			this->dgv_meilleur_art->Name = L"dgv_meilleur_art";
+			this->dgv_meilleur_art->RowHeadersWidth = 51;
+			this->dgv_meilleur_art->RowTemplate->Height = 24;
+			this->dgv_meilleur_art->Size = System::Drawing::Size(372, 150);
+			this->dgv_meilleur_art->TabIndex = 30;
+			// 
+			// dgv_pire_art
+			// 
+			this->dgv_pire_art->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dgv_pire_art->Location = System::Drawing::Point(447, 132);
+			this->dgv_pire_art->Name = L"dgv_pire_art";
+			this->dgv_pire_art->RowHeadersWidth = 51;
+			this->dgv_pire_art->RowTemplate->Height = 24;
+			this->dgv_pire_art->Size = System::Drawing::Size(372, 150);
+			this->dgv_pire_art->TabIndex = 31;
+			// 
+			// afficherMeilleur
+			// 
+			this->afficherMeilleur->Location = System::Drawing::Point(283, 288);
+			this->afficherMeilleur->Name = L"afficherMeilleur";
+			this->afficherMeilleur->Size = System::Drawing::Size(95, 27);
+			this->afficherMeilleur->TabIndex = 32;
+			this->afficherMeilleur->Text = L"Afficher";
+			this->afficherMeilleur->UseVisualStyleBackColor = true;
+			// 
+			// AfficherPire
+			// 
+			this->AfficherPire->Location = System::Drawing::Point(724, 288);
+			this->AfficherPire->Name = L"AfficherPire";
+			this->AfficherPire->Size = System::Drawing::Size(95, 27);
+			this->AfficherPire->TabIndex = 33;
+			this->AfficherPire->Text = L"Afficher";
+			this->AfficherPire->UseVisualStyleBackColor = true;
 			// 
 			// PageStats
 			// 
@@ -237,6 +289,10 @@ namespace ProjetPOO {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
 			this->ClientSize = System::Drawing::Size(831, 413);
+			this->Controls->Add(this->AfficherPire);
+			this->Controls->Add(this->afficherMeilleur);
+			this->Controls->Add(this->dgv_pire_art);
+			this->Controls->Add(this->dgv_meilleur_art);
 			this->Controls->Add(this->buttonID);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->txt_ID_Client);
@@ -252,6 +308,8 @@ namespace ProjetPOO {
 			this->MinimumSize = System::Drawing::Size(849, 460);
 			this->Name = L"PageStats";
 			this->Load += gcnew System::EventHandler(this, &PageStats::PageStats_Load);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_meilleur_art))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_pire_art))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -275,16 +333,19 @@ namespace ProjetPOO {
 	private: void refresh(void) {
 		NS_Composants::mappStats^ stats;
 		this->txt_CA->Text = System::Convert::ToString(stats->getChiffreAffaire());
-
-		this->txt_MontantTC->Text = System::Convert::ToString(stats->getMontantTotalClient());
-
+		this->dgv_meilleur_art->Columns["ID_client"]->Visible = false;
 	}
-private: System::Void txt_CA_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
+	private: System::Void txt_CA_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+
+
 	private: System::Void button_ID(System::Object^ sender, System::EventArgs^ e) {
-		this->txt_ID_Client;
-	refresh();
+		String^ ID = txt_ID_Client->Text;
+		NS_Composants::mappStats^ stats;
+		stats->setID(Convert::ToInt32(ID));
+		this->txt_MontantTC->Text = System::Convert::ToString(stats->getMontantTotalClient());
 	}
+
 private: System::Void label10_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };

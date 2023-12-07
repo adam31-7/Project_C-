@@ -1,18 +1,6 @@
 #include "mappStats.h"
 
-NS_Composants::mappStats::mappStats(void)
-{
-	this->Ref_Art = "";
-	this->Couleur_Art = "";
-	this->Nature_Art = "";
-	this->Nom_Art = "";
-	this->QuantiteS_Art = "";
-	this->Prix_HT_Art = "";
-	this->Taux_TVA = "";
-	this->SeuilRea;
-	this->Quanti_CA = "";
-	this->ID_client = -1;
-}
+NS_Composants::mappStats::mappStats(void) {};
 
 String^ NS_Composants::mappStats::getArticlePlusVendu(void)
 {
@@ -132,4 +120,9 @@ void NS_Composants::mappStats::setID(int client)
 	{
 		this->ID_client = client;
 	}
+}
+
+String^ NS_Composants::mappStats::SELECT()
+{
+	return "SELECT Ref_Art, Couleur_Art, Nature_Art, Nom_Art FROM Article ;";
 }

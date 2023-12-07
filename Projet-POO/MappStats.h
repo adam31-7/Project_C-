@@ -36,5 +36,6 @@ namespace NS_Composants
 		String^ getQuanti_CA(void);
 		int getIDClient(void);
 		void setID(int);
+		virtual String^ SELECT();
 	};
 }
