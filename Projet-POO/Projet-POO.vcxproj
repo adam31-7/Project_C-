@@ -126,6 +126,7 @@
     <ClCompile Include="gestionPersonnels.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="mappPersonnes.cpp" />
+    <ClCompile Include="mappStats.cpp" />
     <ClCompile Include="mappStock.cpp" />
     <ClCompile Include="mappTableAdresse.cpp" />
     <ClCompile Include="mappTableArticle.cpp" />
@@ -149,6 +150,7 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="mappPersonnes.h" />
+    <ClInclude Include="MappStats.h" />
     <ClInclude Include="mappStock.h" />
     <ClInclude Include="mappTableAdresse.h" />
     <ClInclude Include="mappTableArticle.h" />
@@ -184,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PagePersonnel.resx">
       <DependentUpon>PagePersonnel.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageStats.resx">
+      <DependentUpon>PageStats.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PageStock.resx">
       <DependentUpon>PageStock.h</DependentUpon>
