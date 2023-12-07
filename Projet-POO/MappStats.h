@@ -14,6 +14,7 @@ namespace NS_Composants
 		int SeuilRea;
 		String^ Quanti_CA;
 		int ID_client;
+		NS_Composants::mappStats^ Stats;
 	public:
 		mappStats(void);
 		String^ getArticlePlusVendu(void);

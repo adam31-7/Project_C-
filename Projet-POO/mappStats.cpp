@@ -2,7 +2,16 @@
 
 NS_Composants::mappStats::mappStats(void)
 {
-
+	this->Ref_Art = "";
+	this->Couleur_Art = "";
+	this->Nature_Art = "";
+	this->Nom_Art = "";
+	this->QuantiteS_Art = "";
+	this->Prix_HT_Art = "";
+	this->Taux_TVA = "";
+	this->SeuilRea;
+	this->Quanti_CA = "";
+	this->ID_client = -1;
 }
 
 String^ NS_Composants::mappStats::getArticlePlusVendu(void)

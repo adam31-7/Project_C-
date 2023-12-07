@@ -158,7 +158,7 @@ namespace ProjetPOO {
 			// 
 			this->debugText->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->debugText->Location = System::Drawing::Point(411, 342);
-			this->debugText->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->debugText->Margin = System::Windows::Forms::Padding(4);
 			this->debugText->Name = L"debugText";
 			this->debugText->Size = System::Drawing::Size(145, 22);
 			this->debugText->TabIndex = 38;
@@ -167,7 +167,7 @@ namespace ProjetPOO {
 			// 
 			this->txt_message->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->txt_message->Location = System::Drawing::Point(33, 374);
-			this->txt_message->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->txt_message->Margin = System::Windows::Forms::Padding(4);
 			this->txt_message->Multiline = true;
 			this->txt_message->Name = L"txt_message";
 			this->txt_message->Size = System::Drawing::Size(523, 58);
@@ -187,7 +187,7 @@ namespace ProjetPOO {
 			// btn_enr
 			// 
 			this->btn_enr->Location = System::Drawing::Point(314, 251);
-			this->btn_enr->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btn_enr->Margin = System::Windows::Forms::Padding(4);
 			this->btn_enr->Name = L"btn_enr";
 			this->btn_enr->Size = System::Drawing::Size(238, 30);
 			this->btn_enr->TabIndex = 35;
@@ -198,7 +198,7 @@ namespace ProjetPOO {
 			// btn_sup
 			// 
 			this->btn_sup->Location = System::Drawing::Point(469, 219);
-			this->btn_sup->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btn_sup->Margin = System::Windows::Forms::Padding(4);
 			this->btn_sup->Name = L"btn_sup";
 			this->btn_sup->Size = System::Drawing::Size(83, 28);
 			this->btn_sup->TabIndex = 34;
@@ -209,7 +209,7 @@ namespace ProjetPOO {
 			// btn_maj
 			// 
 			this->btn_maj->Location = System::Drawing::Point(396, 219);
-			this->btn_maj->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btn_maj->Margin = System::Windows::Forms::Padding(4);
 			this->btn_maj->Name = L"btn_maj";
 			this->btn_maj->Size = System::Drawing::Size(73, 28);
 			this->btn_maj->TabIndex = 33;
@@ -220,7 +220,7 @@ namespace ProjetPOO {
 			// btn_nouveau
 			// 
 			this->btn_nouveau->Location = System::Drawing::Point(314, 219);
-			this->btn_nouveau->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btn_nouveau->Margin = System::Windows::Forms::Padding(4);
 			this->btn_nouveau->Name = L"btn_nouveau";
 			this->btn_nouveau->Size = System::Drawing::Size(83, 28);
 			this->btn_nouveau->TabIndex = 32;
@@ -231,7 +231,7 @@ namespace ProjetPOO {
 			// btn_next
 			// 
 			this->btn_next->Location = System::Drawing::Point(151, 252);
-			this->btn_next->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btn_next->Margin = System::Windows::Forms::Padding(4);
 			this->btn_next->Name = L"btn_next";
 			this->btn_next->Size = System::Drawing::Size(69, 28);
 			this->btn_next->TabIndex = 29;
@@ -242,7 +242,7 @@ namespace ProjetPOO {
 			// btn_last
 			// 
 			this->btn_last->Location = System::Drawing::Point(221, 252);
-			this->btn_last->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btn_last->Margin = System::Windows::Forms::Padding(4);
 			this->btn_last->Name = L"btn_last";
 			this->btn_last->Size = System::Drawing::Size(54, 55);
 			this->btn_last->TabIndex = 28;
@@ -253,7 +253,7 @@ namespace ProjetPOO {
 			// btn_previous
 			// 
 			this->btn_previous->Location = System::Drawing::Point(86, 252);
-			this->btn_previous->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btn_previous->Margin = System::Windows::Forms::Padding(4);
 			this->btn_previous->Name = L"btn_previous";
 			this->btn_previous->Size = System::Drawing::Size(65, 28);
 			this->btn_previous->TabIndex = 27;
@@ -264,10 +264,11 @@ namespace ProjetPOO {
 			// txt_prenom
 			// 
 			this->txt_prenom->Location = System::Drawing::Point(33, 150);
-			this->txt_prenom->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->txt_prenom->Margin = System::Windows::Forms::Padding(4);
 			this->txt_prenom->Name = L"txt_prenom";
 			this->txt_prenom->Size = System::Drawing::Size(236, 22);
 			this->txt_prenom->TabIndex = 26;
+			this->txt_prenom->TextChanged += gcnew System::EventHandler(this, &PagePersonnel::txt_prenom_TextChanged);
 			// 
 			// lbl_prenom
 			// 
@@ -302,7 +303,7 @@ namespace ProjetPOO {
 			// txt_nom
 			// 
 			this->txt_nom->Location = System::Drawing::Point(33, 91);
-			this->txt_nom->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->txt_nom->Margin = System::Windows::Forms::Padding(4);
 			this->txt_nom->Name = L"txt_nom";
 			this->txt_nom->Size = System::Drawing::Size(236, 22);
 			this->txt_nom->TabIndex = 22;
@@ -310,7 +311,7 @@ namespace ProjetPOO {
 			// txt_id
 			// 
 			this->txt_id->Location = System::Drawing::Point(33, 36);
-			this->txt_id->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->txt_id->Margin = System::Windows::Forms::Padding(4);
 			this->txt_id->Name = L"txt_id";
 			this->txt_id->ReadOnly = true;
 			this->txt_id->Size = System::Drawing::Size(236, 22);
@@ -319,7 +320,7 @@ namespace ProjetPOO {
 			// btn_first
 			// 
 			this->btn_first->Location = System::Drawing::Point(31, 252);
-			this->btn_first->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btn_first->Margin = System::Windows::Forms::Padding(4);
 			this->btn_first->Name = L"btn_first";
 			this->btn_first->Size = System::Drawing::Size(55, 55);
 			this->btn_first->TabIndex = 20;
@@ -350,7 +351,7 @@ namespace ProjetPOO {
 			// txt_id_suph
 			// 
 			this->txt_id_suph->Location = System::Drawing::Point(317, 95);
-			this->txt_id_suph->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->txt_id_suph->Margin = System::Windows::Forms::Padding(4);
 			this->txt_id_suph->Name = L"txt_id_suph";
 			this->txt_id_suph->Size = System::Drawing::Size(236, 22);
 			this->txt_id_suph->TabIndex = 45;
@@ -368,7 +369,7 @@ namespace ProjetPOO {
 			// txt_id_adresse
 			// 
 			this->txt_id_adresse->Location = System::Drawing::Point(319, 155);
-			this->txt_id_adresse->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->txt_id_adresse->Margin = System::Windows::Forms::Padding(4);
 			this->txt_id_adresse->Name = L"txt_id_adresse";
 			this->txt_id_adresse->Size = System::Drawing::Size(236, 22);
 			this->txt_id_adresse->TabIndex = 47;
@@ -594,6 +595,8 @@ if (this->mode == "nouveau")
 		this->index = this->rowsCount - 1;
 		refresh();
 	}
+}
+private: System::Void txt_prenom_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
