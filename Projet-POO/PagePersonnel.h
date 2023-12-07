@@ -540,8 +540,8 @@ namespace ProjetPOO {
 			this->Controls->Add(this->txt_id);
 			this->Controls->Add(this->btn_first);
 			this->Margin = System::Windows::Forms::Padding(2);
-			this->MaximumSize = System::Drawing::Size(602, 600);
-			this->MinimumSize = System::Drawing::Size(602, 501);
+			this->MaximumSize = System::Drawing::Size(602, 535);
+			this->MinimumSize = System::Drawing::Size(602, 535);
 			this->Name = L"PagePersonnel";
 			this->Load += gcnew System::EventHandler(this, &PagePersonnel::PagePerso_Load);
 			this->panel1->ResumeLayout(false);
