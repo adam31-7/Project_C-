@@ -22,7 +22,7 @@ String^ NS_Composants::mappStock::getArticleMoinsVendu(void)
 
 String^ NS_Composants::mappStock::getMontantTotalClient(void)
 {
-	return "SELECT Client." + this->getIDClient() + ", Client.Nom_Client, Client.Prenom_Client,"
+	return "SELECT Client.ID_client, Client.Nom_Client, Client.Prenom_Client,"
 		+ "SUM(CAST(Article.Prix_HT_Art AS DECIMAL) * CAST(Article_Commande.Quanti_CA AS DECIMAL)) AS TotalAmountSpent"
 		+ "FROM Client AS C"
 		+ "JOIN Commande AS Co ON C.ID_client = Co.ID_client"
