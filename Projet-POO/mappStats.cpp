@@ -124,5 +124,5 @@ void NS_Composants::mappStats::setID(int client)
 
 String^ NS_Composants::mappStats::SELECT()
 {
-	return "SELECT Ref_Art, Couleur_Art, Nature_Art, Nom_Art FROM Article ;";
+	return "SELECT Quanitie FROM Article ;";
 }

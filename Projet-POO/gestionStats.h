@@ -9,8 +9,7 @@ using namespace System::Data::SqlClient;
 using namespace System::Xml;
 using namespace System;
 
-namespace NS_SVC
-{
+namespace NS_SVC {
 	ref class gestionStats
 	{
 	private:
@@ -19,6 +18,11 @@ namespace NS_SVC
 		NS_Composants::mappStats^ Stats;
 	public:
 		gestionStats(void);
-		DataSet^ listeArticle(String^);
+		DataSet^ listeArticlePV(String^);
+		DataSet^ listeArticleMV(String^);
+		DataSet^ Montant(String^);
+		DataSet^ CA(String^);
+
+
 	};
 }
