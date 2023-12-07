@@ -182,12 +182,12 @@ namespace ProjetPOO {
 		}
 	private: System::Void btn_enregistrer_Click(System::Object^ sender, System::EventArgs^ e) {
 		array<String^>^ infoArticle = gcnew array<String^>(dgv_articles->ColumnCount);
-		for each (DataGridViewRow ^ row in dgv_articles->Rows)
+		for (int i = 0; i < dgv_articles->RowCount-1; i++)
 		{
 			this->gestionArticle = gcnew NS_SVC::gestionArticle();
-			for (int i = 0; i < dgv_articles->ColumnCount; i++)
+			for (int j = 0; j < dgv_articles->ColumnCount; j++)
 			{
-				infoArticle[i] = Convert::ToString(dgv_articles[i, row->Index]->Value);
+				infoArticle[j] = Convert::ToString(dgv_articles[j, i]->Value);
 			}
 			gestionArticle->modifier(infoArticle);
 		}

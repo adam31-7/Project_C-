@@ -22,8 +22,9 @@ namespace NS_SVC
 		this->article->setNature(infoArticle[2]);
 		this->article->setNom(infoArticle[3]);
 		this->article->setQuantite_Stock(Convert::ToInt32(infoArticle[4]));
-		this->article->setTauxTVA(Convert::ToInt32(infoArticle[5]));
-		this->article->setPrixHT(Convert::ToInt32(infoArticle[6]));
+		this->article->setTauxTVA(Convert::ToDecimal(infoArticle[5]->Replace(".", ",")));
+		this->article->setPrixHT(Convert::ToDecimal(infoArticle[6]->Replace(".", ",")));
+		this->article->setSeuilRea(Convert::ToInt32(infoArticle[7]));
 		this->cad->actionRows(this->article->INSERT());
 	}
 
@@ -34,20 +35,29 @@ namespace NS_SVC
 		this->article->setNature(infoArticle[2]);
 		this->article->setNom(infoArticle[3]);
 
-		int quantiteStock = 0, tauxTVA = 0, prixHT = 0;
+		int quantiteStock = 0, seuil = 0;
+		Decimal tauxTVA = 0, prixHT = 0;
 
-		if (!String::IsNullOrEmpty(infoArticle[4]))
+		if (!String::IsNullOrEmpty(infoArticle[4])) {
 			quantiteStock = Convert::ToInt32(infoArticle[4]);
+		}
 
-		if (!String::IsNullOrEmpty(infoArticle[5]))
-			tauxTVA = Convert::ToInt32(infoArticle[5]);
+		if (!String::IsNullOrEmpty(infoArticle[5])) {
+			prixHT = Convert::ToDecimal(infoArticle[5]->Replace(".", ","));
+		}
 
-		if (!String::IsNullOrEmpty(infoArticle[6]))
-			prixHT = Convert::ToInt32(infoArticle[6]);
+		if (!String::IsNullOrEmpty(infoArticle[6])) {
+			tauxTVA = Convert::ToDecimal(infoArticle[6]->Replace(".", ","));
+		}
+
+		if (!String::IsNullOrEmpty(infoArticle[7])) {
+			seuil = Convert::ToInt32(infoArticle[7]);
+		}
 
 		this->article->setQuantite_Stock(quantiteStock);
 		this->article->setTauxTVA(tauxTVA);
 		this->article->setPrixHT(prixHT);
+		this->article->setSeuilRea(seuil);
 
 		this->cad->actionRows(this->article->UPDATE());
 

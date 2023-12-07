@@ -223,6 +223,7 @@ namespace ProjetPOO {
 			this->txt_CA->Location = System::Drawing::Point(265, 54);
 			this->txt_CA->Margin = System::Windows::Forms::Padding(2);
 			this->txt_CA->Name = L"txt_CA";
+			this->txt_CA->ReadOnly = true;
 			this->txt_CA->Size = System::Drawing::Size(154, 20);
 			this->txt_CA->TabIndex = 26;
 			// 

@@ -66,14 +66,23 @@ namespace NS_Composants
 			this->Quantite_Stock = Quantite_stock;
 		}
 	}
-	void mappTableArticle::setTauxTVA(float Taux_TVA)
+
+	void mappTableArticle::setSeuilRea(int SeuilRea)
+	{
+		if (SeuilRea > 0)
+		{
+			this->SeuilRea = SeuilRea;
+		}
+	}
+
+	void mappTableArticle::setTauxTVA(Decimal Taux_TVA)
 	{
 		if (Taux_TVA > 0)
 		{
 			this->TauxTVA = Taux_TVA;
 		}
 	}
-	void mappTableArticle::setPrixHT(float Prix_HT)
+	void mappTableArticle::setPrixHT(Decimal Prix_HT)
 	{
 		if (Prix_HT > 0)
 		{
@@ -100,12 +109,16 @@ namespace NS_Composants
 	{
 		return this->Quantite_Stock;
 	}
-	float mappTableArticle::getTauxTVA(void)
+	Decimal mappTableArticle::getTauxTVA(void)
 	{
 		return this->TauxTVA;
 	}
-	float mappTableArticle::getPrixHT(void)
+	Decimal mappTableArticle::getPrixHT(void)
 	{
 		return this->PrixHT;
+	}
+	int mappTableArticle::getSeuilRea(void)
+	{
+		return this->SeuilRea;
 	}
 }
