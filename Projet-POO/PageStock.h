@@ -81,19 +81,21 @@ namespace ProjetPOO {
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->dgv_articles->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dgv_articles->Location = System::Drawing::Point(76, 58);
+			this->dgv_articles->Location = System::Drawing::Point(51, 38);
+			this->dgv_articles->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->dgv_articles->Name = L"dgv_articles";
 			this->dgv_articles->RowHeadersWidth = 62;
 			this->dgv_articles->RowTemplate->Height = 28;
-			this->dgv_articles->Size = System::Drawing::Size(1016, 475);
+			this->dgv_articles->Size = System::Drawing::Size(677, 309);
 			this->dgv_articles->TabIndex = 0;
 			// 
 			// btn_ajouter
 			// 
 			this->btn_ajouter->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			this->btn_ajouter->Location = System::Drawing::Point(591, 677);
+			this->btn_ajouter->Location = System::Drawing::Point(394, 440);
+			this->btn_ajouter->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btn_ajouter->Name = L"btn_ajouter";
-			this->btn_ajouter->Size = System::Drawing::Size(232, 76);
+			this->btn_ajouter->Size = System::Drawing::Size(155, 49);
 			this->btn_ajouter->TabIndex = 1;
 			this->btn_ajouter->Text = L"Nouvel article";
 			this->btn_ajouter->UseVisualStyleBackColor = true;
@@ -102,46 +104,46 @@ namespace ProjetPOO {
 			// btn_enregistrer
 			// 
 			this->btn_enregistrer->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			this->btn_enregistrer->Location = System::Drawing::Point(860, 677);
+			this->btn_enregistrer->Location = System::Drawing::Point(573, 440);
+			this->btn_enregistrer->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btn_enregistrer->Name = L"btn_enregistrer";
-			this->btn_enregistrer->Size = System::Drawing::Size(232, 76);
+			this->btn_enregistrer->Size = System::Drawing::Size(155, 49);
 			this->btn_enregistrer->TabIndex = 2;
 			this->btn_enregistrer->Text = L"Enregistrer";
 			this->btn_enregistrer->UseVisualStyleBackColor = true;
+			this->btn_enregistrer->Click += gcnew System::EventHandler(this, &PageStock::btn_enregistrer_Click);
 			// 
 			// txt_message
 			// 
 			this->txt_message->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->txt_message->Location = System::Drawing::Point(77, 681);
-			this->txt_message->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->txt_message->Location = System::Drawing::Point(51, 443);
 			this->txt_message->Multiline = true;
 			this->txt_message->Name = L"txt_message";
-			this->txt_message->Size = System::Drawing::Size(465, 72);
+			this->txt_message->Size = System::Drawing::Size(311, 48);
 			this->txt_message->TabIndex = 19;
 			// 
 			// lbl_message
 			// 
 			this->lbl_message->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
 			this->lbl_message->AutoSize = true;
-			this->lbl_message->Location = System::Drawing::Point(72, 657);
-			this->lbl_message->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->lbl_message->Location = System::Drawing::Point(48, 427);
 			this->lbl_message->Name = L"lbl_message";
-			this->lbl_message->Size = System::Drawing::Size(74, 20);
+			this->lbl_message->Size = System::Drawing::Size(50, 13);
 			this->lbl_message->TabIndex = 18;
 			this->lbl_message->Text = L"Message";
 			// 
 			// PageStock
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1169, 767);
+			this->ClientSize = System::Drawing::Size(779, 499);
 			this->Controls->Add(this->txt_message);
 			this->Controls->Add(this->lbl_message);
 			this->Controls->Add(this->btn_enregistrer);
 			this->Controls->Add(this->btn_ajouter);
 			this->Controls->Add(this->dgv_articles);
-			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
+			this->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
 			this->Name = L"PageStock";
 			this->Text = L"PageStock";
 			this->Load += gcnew System::EventHandler(this, &PageStock::PageStock_Load);
@@ -157,7 +159,6 @@ namespace ProjetPOO {
 		this->refresh();
 	}
 	private: System::Void btn_ajouter_Click(System::Object^ sender, System::EventArgs^ e) {
-		NS_SVC::gestionArticle^ gestionArticle = gcnew NS_SVC::gestionArticle();
 
 		array<String^>^ infoArticle = gcnew array<String^>(dgv_articles->ColumnCount);
 
@@ -177,5 +178,17 @@ namespace ProjetPOO {
 			this->dgv_articles->DataMember = "Articles";
 			//this->txt_message->Text = "Chargement de l'enregistrement : " + (this->index + 1);
 		}
+	private: System::Void btn_enregistrer_Click(System::Object^ sender, System::EventArgs^ e) {
+		array<String^>^ infoArticle = gcnew array<String^>(dgv_articles->ColumnCount);
+		for each (DataGridViewRow ^ row in dgv_articles->Rows)
+		{
+			for (int i = 0; i < dgv_articles->ColumnCount; i++)
+			{
+				infoArticle[i] = Convert::ToString(dgv_articles[i, row->Index]->Value);
+			}
+			gestionArticle->modifier(infoArticle);
+		}
+
+	}
 };
 }
