@@ -52,9 +52,10 @@ namespace ProjetPOO {
 			// 
 			// PageStock
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(726, 457);
+			this->ClientSize = System::Drawing::Size(1169, 767);
+			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->Name = L"PageStock";
 			this->Text = L"PageStock";
 			this->ResumeLayout(false);
