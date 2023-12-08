@@ -607,8 +607,6 @@ namespace ProjetPOO {
 		this->txt_id->Text = "";
 		this->txt_nom->Text = "";
 		this->txt_prenom->Text = "";
-		this->dt_date_naissance->Value = DateTime::Now;
-		this->dt_date_embauche->Value = DateTime::Now;
 		this->txt_id_suph->Text = "";
 		this->txt_id_adresse->Text = "";
 		this->txt_message->Text = "Nouvel enregistrement";
@@ -621,8 +619,8 @@ namespace ProjetPOO {
 private: System::Void btn_sup_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->txt_prenom->Text = "";
 	this->txt_nom->Text = "";
-	this->dt_date_naissance->Value = DateTime::Now;
-	this->dt_date_embauche->Value = DateTime::Now;
+	this->dt_date_naissance->Value = dt_date_naissance->MinDateTime;
+	this->dt_date_embauche->Value = dt_date_embauche->MinDateTime;
 	this->txt_id_suph->Text = "";
 	this->txt_id_adresse->Text = "";
 	this->txt_message->Text = "Enregistrement supprimé";
