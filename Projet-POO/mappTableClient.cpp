@@ -21,13 +21,14 @@ namespace NS_Composants
 	String^ mappTableClient::INSERT(void)
 	{
 		return "INSERT INTO Client " +
-			"(Nom_client, Prenom_client) " +
-			"VALUES('" + this->getNom() + "', '" + this->getPrenom() + "');SELECT @@IDENTITY; ";
+			"(Nom_client, Prenom_client, Date_naissance_client, DatePR_Achat) " +
+			"VALUES('" + this->getNom() + "', '" + this->getPrenom() + "', '" + this->getDateNaissance() + "', '" + this->getDatePr() +
+			"');SELECT @@IDENTITY; ";
 	}
 	String^ mappTableClient::UPDATE(void)
 	{
 		return "UPDATE Client " +
-			"SET Nom_client = '" + this->getNom() + "', Prenom_client = '" + this->getPrenom() + "' " +
+			"SET Nom_client = '" + this->getNom() + "', Prenom_client = '" + this->getPrenom() + "' " + ", Date_naissance_client = '" + this->getDateNaissance() + "' " + ", DatePR_Achat = '" + this->getDatePr() + "' " +
 			"WHERE(ID_client = " + this->getId() + ");";
 	}
 	String^ mappTableClient::DELETE(void)

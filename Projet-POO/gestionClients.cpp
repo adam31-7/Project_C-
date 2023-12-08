@@ -20,12 +20,14 @@ namespace NS_SVC
 		this->ds = this->cad->getRows(this->adresse->SELECTByIdClient(), dataTableName);
 		return this->ds;
 	}
-	void gestionClients::ajouter(String^ nom, String^ prenom, array<String^>^
+	void gestionClients::ajouter(String^ nom, String^ prenom, DateTime date_naissance, DateTime date_pr, array<String^>^
 		lesAdresses)
 	{
 		int id;
 		this->client->setNom(nom);
 		this->client->setPrenom(prenom);
+		this->client->setDateNaissance(date_naissance);
+		this->client->setDatePr(date_pr);
 		id = this->cad->actionRowsID(this->client->INSERT());
 		for (int i = 0; i < lesAdresses->Length - 1; i++)
 		{
@@ -41,11 +43,13 @@ namespace NS_SVC
 		}
 	}
 	void gestionClients::gestionClients::modifier(int id_client, String^ nom,
-		String^ prenom, array<String^>^ lesAdresses)
+		String^ prenom, DateTime date_naissance, DateTime date_pr, array<String^>^ lesAdresses)
 	{
 		this->client->setID(id_client);
 		this->client->setNom(nom);
 		this->client->setPrenom(prenom);
+		this->client->setDateNaissance(date_naissance);
+		this->client->setDatePr(date_pr);
 		this->cad->actionRows(this->client->UPDATE());
 		for (int i = 0; i < lesAdresses->Length - 1; i++)
 		{

@@ -21,8 +21,8 @@ namespace NS_SVC
 		gestionClients(void);
 		DataSet^ listeClients(String^);
 		DataSet^ adressesClient(int, String^);
-		void ajouter(String^, String^, array<String^>^);
-		void modifier(int, String^, String^, array<String^>^);
+		void ajouter(String^, String^, DateTime, DateTime, array<String^>^);
+		void modifier(int, String^, String^, DateTime, DateTime, array<String^>^);
 		void supprimer(int);
 	};
 }
