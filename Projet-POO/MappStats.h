@@ -17,8 +17,8 @@ namespace NS_Composants
 		NS_Composants::mappStats^ Stats;
 	public:
 		mappStats(void);
-		String^ getArticlePlusVendu(void);
-		String^ getArticleMoinsVendu(void);
+		String^ getArticlePlusVendu(int nbr);
+		String^ getArticleMoinsVendu(int nbr);
 		String^ ProduitSousSeuil(void);
 		String^ getMontantTotalClient(int id);
 		String^ CalculerValCommerciale(void);

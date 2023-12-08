@@ -18,8 +18,8 @@ namespace NS_SVC {
 		NS_Composants::mappStats^ Stats;
 	public:
 		gestionStats(void);
-		DataSet^ listeArticlePV(String^);
-		DataSet^ listeArticleMV(String^);
+		DataSet^ listeArticlePV(int nbr, String^);
+		DataSet^ listeArticleMV(int nbr, String^);
 		DataSet^ Montant(int, String^);
 		Decimal CA(void);
 

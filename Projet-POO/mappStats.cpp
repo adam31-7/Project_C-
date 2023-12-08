@@ -2,15 +2,15 @@
 
 NS_Composants::mappStats::mappStats(void) {};
 
-String^ NS_Composants::mappStats::getArticlePlusVendu(void)
+String^ NS_Composants::mappStats::getArticlePlusVendu(int nbr)
 {
-	return "SELECT TOP 10 AC.Ref_Art,A.Nom_Art, SUM(CAST(AC.Quanti_CA AS DECIMAL)) AS TotalQuantitySold " + " "
+	return "SELECT TOP " + nbr.ToString() + " AC.Ref_Art,A.Nom_Art, SUM(CAST(AC.Quanti_CA AS DECIMAL)) AS TotalQuantitySold " + " "
 		+ "FROM Article_Commande AS AC JOIN Article AS A ON AC.Ref_Art = A.Ref_Art GROUP BY AC.Ref_Art, A.Nom_Art ORDER BY TotalQuantitySold DESC;";
 }
 
-String^ NS_Composants::mappStats::getArticleMoinsVendu(void)
+String^ NS_Composants::mappStats::getArticleMoinsVendu(int nbr)
 {
-	return "SELECT TOP 10 AC.Ref_Art,A.Nom_Art, SUM(CAST(AC.Quanti_CA AS DECIMAL)) AS TotalQuantitySold" + " "
+	return "SELECT TOP " + nbr.ToString() + " AC.Ref_Art,A.Nom_Art, SUM(CAST(AC.Quanti_CA AS DECIMAL)) AS TotalQuantitySold" + " "
 		+ "FROM Article_Commande AS AC JOIN Article AS A ON AC.Ref_Art = A.Ref_Art GROUP BY AC.Ref_Art, A.Nom_Art ORDER BY TotalQuantitySold ASC;";
 }
 

@@ -7,17 +7,17 @@ namespace NS_SVC
         this->cad = gcnew NS_Composants::CAD();
         this->Stats = gcnew NS_Composants::mappStats();
     }
-    DataSet^ gestionStats::listeArticlePV(String^ dataTableName)
+    DataSet^ gestionStats::listeArticlePV(int nbr, String^ dataTableName)
     {
         this->ds = gcnew DataSet();
-        this->ds = this->cad->getRows(this->Stats->getArticlePlusVendu(),dataTableName);
+        this->ds = this->cad->getRows(this->Stats->getArticlePlusVendu(nbr),dataTableName);
         return this->ds;
     }
 
-    DataSet^ gestionStats::listeArticleMV(String^ dataTableName)
+    DataSet^ gestionStats::listeArticleMV(int nbr, String^ dataTableName)
     {
         this->ds = gcnew DataSet();
-        this->ds = this->cad->getRows(this->Stats->getArticleMoinsVendu(), dataTableName);
+        this->ds = this->cad->getRows(this->Stats->getArticleMoinsVendu(nbr), dataTableName);
         return this->ds;
     }
     DataSet^ gestionStats::Montant(int id, String^ dataTableName)
