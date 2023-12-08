@@ -33,7 +33,7 @@ namespace NS_Composants
 	}
 	String^ mappTableClient::DELETE(void)
 	{
-		return "DELETE FROM Adresse WHERE (ID_client = " + this->getId() + ");" + mappPersonnes::DELETE("Client", "ID_client");
+		return mappPersonnes::DELETE("Client", "ID_client", this->getId());
 		//return "DELETE FROM " + table + " WHERE(" + id_name +" = " + this->getId() + ");";
 	}
 	void mappTableClient::setID(int ID_client)

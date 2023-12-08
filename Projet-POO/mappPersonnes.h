@@ -15,7 +15,7 @@ namespace NS_Composants
 		virtual String^ SELECTbyID(String^ table, String^ id_name);
 		virtual String^ INSERT(void) = 0;
 		virtual String^ UPDATE(void) = 0;
-		virtual String^ DELETE(String^ table, String^ id_name);
+		virtual String^ DELETE(String^ table, String^ id_name, int id);
 		virtual void setID(int) = 0;
 		virtual void setPrenom(String^) = 0;
 		virtual void setNom(String^) = 0;
