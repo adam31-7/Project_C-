@@ -18,7 +18,7 @@ String^ NS_Composants::mappStats::getArticleMoinsVendu(int nbr)
 String^ NS_Composants::mappStats::getMontantTotalClient(int id)
 {
 	return "SELECT C.ID_client, C.Nom_Client, C.Prenom_Client," + " "
-		+ "SUM(CAST(A.Prix_HT_Art AS DECIMAL) * CAST(AC.Quanti_CA AS DECIMAL)) AS TotalAmountSpent" + " "
+		+ "AVG(CAST(A.Prix_HT_Art AS DECIMAL) * CAST(AC.Quanti_CA AS DECIMAL)) AS PanierMoyen" + " "
 		+ "FROM Client AS C" + " "
 		+ "JOIN Commande AS Co ON C.ID_client = Co.ID_client" + " "
 		+ "JOIN Article_Commande AS AC ON Co.Ref_com = AC.Ref_com" + " "
