@@ -32,9 +32,13 @@ namespace NS_Composants
 
 	String^ mappTablePersonnel::DELETE(void)
 	{
-		return mappPersonnes::DELETE("Personnel", "ID_perso", this->getId());
-		//return "DELETE FROM " + table + " WHERE(" + id_name +" = " + this->getId() + ");";
+		// Récupérer l'ID de l'objet mappTablePersonnel
+		int id = this->getId();
+
+		// Utiliser la méthode DELETE de la classe mappPersonnes pour construire la requête DELETE
+		return mappPersonnes::DELETE("Personnel", "ID_perso", id);
 	}
+
 
 	void mappTablePersonnel::setID(int ID_perso)
 	{

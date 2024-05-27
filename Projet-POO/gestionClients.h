@@ -10,7 +10,7 @@ using namespace System::Xml;
 using namespace System;
 namespace NS_SVC
 {
-	ref class gestionClients
+	public ref class gestionClients
 	{
 	private:
 		NS_Composants::CAD^ cad;

@@ -5,7 +5,7 @@ namespace NS_Composants
 	CAD::CAD(void)
 	{
 		this->rq_sql = ""; //ou ""
-		this->cnx = "Data Source=PC_Adam;Initial Catalog=ProjetPOO;User ID=adam;Password=azerty";
+		this->cnx = "Data Source=PC_Adam;Initial Catalog=ProjetPOO;User ID=adam;Password=password1234";
 		this->CNX = gcnew SqlConnection(this->cnx);
 		this->CMD = gcnew SqlCommand(this->rq_sql, this->CNX);
 		this->CMD->CommandType = CommandType::Text;

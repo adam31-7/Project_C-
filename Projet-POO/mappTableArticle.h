@@ -2,7 +2,7 @@
 using namespace System;
 namespace NS_Composants
 {
-	ref class mappTableArticle
+	public ref class mappTableArticle
 	{
 	private:
 		String^ ref;

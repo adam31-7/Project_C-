@@ -3,7 +3,7 @@
 #include "mappTableArticle.h"
 namespace NS_SVC
 {
-	ref class gestionArticle
+	public ref class gestionArticle
 	{
 		private:
 		NS_Composants::CAD^ cad;
@@ -15,6 +15,7 @@ namespace NS_SVC
 			DataSet^ listeArticles(String^);
 			void ajouter(array<String^>^);
 			void modifier(array<String^>^);
+			void supprimer(String^ refArticle); 
 	};
 }
 

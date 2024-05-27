@@ -62,4 +62,22 @@ namespace NS_SVC
 		this->cad->actionRows(this->article->UPDATE());
 
 	}
+
+	void gestionArticle::supprimer(String^ refArticle)
+	{
+		// Construction de la requête SQL pour supprimer l'article avec la référence spécifiée
+		String^ query = "DELETE FROM Article WHERE Ref_Art = '" + refArticle + "'";
+
+		try
+		{
+			// Exécution de la requête de suppression
+			this->cad->actionRows(query);
+		}
+		catch (Exception^ ex)
+		{
+			// Gestion des erreurs (par exemple, enregistrer le message d'erreur dans un fichier de journal)
+			Console::WriteLine("Erreur lors de la suppression de l'article: " + ex->Message);
+		}
+	}
+
 }

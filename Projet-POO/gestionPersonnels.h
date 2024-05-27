@@ -9,7 +9,7 @@ using namespace System::Xml;
 using namespace System;
 namespace NS_SVC
 {
-	ref class gestionPersonnels
+	public ref class gestionPersonnels
 	{
 	private:
 		NS_Composants::CAD^ cad;
