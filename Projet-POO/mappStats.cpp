@@ -4,15 +4,23 @@ NS_Composants::mappStats::mappStats(void) {};
 
 String^ NS_Composants::mappStats::getArticlePlusVendu(int nbr)
 {
-	return "SELECT TOP " + nbr.ToString() + " AC.Ref_Art,A.Nom_Art, SUM(CAST(AC.Quanti_CA AS DECIMAL)) AS TotalQuantitySold " + " "
-		+ "FROM Article_Commande AS AC JOIN Article AS A ON AC.Ref_Art = A.Ref_Art GROUP BY AC.Ref_Art, A.Nom_Art ORDER BY TotalQuantitySold DESC;";
+	return "SELECT AC.Ref_Art, A.Nom_Art, SUM(CAST(AC.Quanti_CA AS DECIMAL)) AS TotalQuantitySold" +
+		" FROM Article_Commande AS AC JOIN Article AS A ON AC.Ref_Art = A.Ref_Art" +
+		" GROUP BY AC.Ref_Art, A.Nom_Art" +
+		" ORDER BY TotalQuantitySold DESC" +
+		" LIMIT " + nbr.ToString() + ";";
 }
+
 
 String^ NS_Composants::mappStats::getArticleMoinsVendu(int nbr)
 {
-	return "SELECT TOP " + nbr.ToString() + " AC.Ref_Art,A.Nom_Art, SUM(CAST(AC.Quanti_CA AS DECIMAL)) AS TotalQuantitySold" + " "
-		+ "FROM Article_Commande AS AC JOIN Article AS A ON AC.Ref_Art = A.Ref_Art GROUP BY AC.Ref_Art, A.Nom_Art ORDER BY TotalQuantitySold ASC;";
+	return "SELECT AC.Ref_Art, A.Nom_Art, SUM(CAST(AC.Quanti_CA AS DECIMAL)) AS TotalQuantitySold" +
+		" FROM Article_Commande AS AC JOIN Article AS A ON AC.Ref_Art = A.Ref_Art" +
+		" GROUP BY AC.Ref_Art, A.Nom_Art" +
+		" ORDER BY TotalQuantitySold ASC" +
+		" LIMIT " + nbr.ToString() + ";";
 }
+
 
 
 String^ NS_Composants::mappStats::getMontantTotalClient(int id)
@@ -30,15 +38,16 @@ String^ NS_Composants::mappStats::getMontantTotalClient(int id)
 
 String^ NS_Composants::mappStats::CalculerValCommerciale(void)
 {
-	return "SELECT A.Ref_Art,Article.Nom_Art,SUM(CAST(A.QuantiteS_Art AS DECIMAL) * CAST(A.Prix_HT_Art AS DECIMAL)) AS CommercialValue"
+	return "SELECT A.Ref_Art, Article.Nom_Art, SUM(CAST(A.QuantiteS_Art AS DECIMAL) * CAST(A.Prix_HT_Art AS DECIMAL)) AS CommercialValue "
 		+ "FROM Article AS A GROUP BY A.Ref_Art, A.Nom_Art;";
 }
+
 
 
 String^ NS_Composants::mappStats::CalculerValeurStock(void)
 {
 	return "SELECT SUM(CAST(A.QuantiteS_Art AS DECIMAL) * CAST(A.Prix_HT_Art AS DECIMAL)) AS TotalStockValue"
-		+ "FROM Article AS A;";
+		+ " FROM Article AS A;";
 }
 
 

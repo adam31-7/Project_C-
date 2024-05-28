@@ -18,7 +18,6 @@ namespace Tests
         [TearDown]
         public void Cleanup()
         {
-            // Nettoyer les données après chaque test
             gestionArticle.supprimer("PB00518880");
             gestionArticle.supprimer("PB00518888");
         }
@@ -28,21 +27,17 @@ namespace Tests
         {
             Console.WriteLine("Test Start: AjouterArticle");
 
-            // Assign
             var infoArticle = new string[] {
                 "PB00518880", "Rouge", "Electronique", "Téléphone",
                 "50", "20.0", "100.0", "10"
             };
 
-            // Act
             gestionArticle.ajouter(infoArticle);
 
-            // Retrieve the list of articles
             DataSet result = gestionArticle.listeArticles("Article");
             Assert.IsNotNull(result, "DataSet should not be null");
             Assert.IsTrue(result.Tables.Contains("Article"), "DataTable 'Article' should exist");
 
-            // Check if the new article is in the DataTable
             bool isAdded = false;
             foreach (DataRow row in result.Tables["Article"].Rows)
             {
@@ -53,7 +48,6 @@ namespace Tests
                 }
             }
 
-            // Assert
             Assert.IsTrue(isAdded, "The article should be added to the DataTable");
         }
 
@@ -62,28 +56,22 @@ namespace Tests
         {
             Console.WriteLine("Test Start: ModifierArticle");
 
-            // Assign
             var infoArticle = new string[] {
                 "PB00518888", "Rouge", "Electronique", "Téléphone",
                 "50", "20.0", "100.0", "10"
             };
 
-            // Add article first
             gestionArticle.ajouter(infoArticle);
 
-            // Update article info
             var updatedInfoArticle = new string[] {
                 "PB00518888", "Bleu", "Electronique", "Smartphone",
                 "100", "20.0", "150.0", "5"
             };
 
-            // Act
             gestionArticle.modifier(updatedInfoArticle);
 
-            // Retrieve the list of articles
             DataSet result = gestionArticle.listeArticles("Article");
 
-            // Check if the article is updated in the DataTable
             bool isUpdated = false;
             foreach (DataRow row in result.Tables["Article"].Rows)
             {
@@ -96,7 +84,6 @@ namespace Tests
                 }
             }
 
-            // Assert
             Assert.IsTrue(isUpdated, "The article should be updated in the DataTable");
         }
 
@@ -105,22 +92,17 @@ namespace Tests
         {
             Console.WriteLine("Test Start: SupprimerArticle");
 
-            // Assign
             var infoArticle = new string[] {
                 "PB00518869", "Rouge", "Electronique", "Téléphone",
                 "50", "20.0", "100.0", "10"
             };
 
-            // Add article first
             gestionArticle.ajouter(infoArticle);
 
-            // Act
             gestionArticle.supprimer("PB00518869");
 
-            // Retrieve the list of articles
             DataSet result = gestionArticle.listeArticles("Article");
 
-            // Check if the article is deleted from the DataTable
             bool isDeleted = true;
             foreach (DataRow row in result.Tables["Article"].Rows)
             {
@@ -131,7 +113,6 @@ namespace Tests
                 }
             }
 
-            // Assert
             Assert.IsTrue(isDeleted, "The article should be deleted from the DataTable");
         }
     }

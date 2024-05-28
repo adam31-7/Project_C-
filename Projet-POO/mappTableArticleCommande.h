@@ -3,9 +3,9 @@
 #include "mappTableCommande.h"
 namespace NS_Composants
 {
-	ref class mappTableArticleCommande
+	public ref class mappTableArticleCommande
 	{
-	private:
+	private:	
 		int ID_Article;
 		int ID_Commande;
 		int Quantite;

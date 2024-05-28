@@ -1,7 +1,7 @@
 #pragma once
 using namespace System;
 namespace NS_Composants
-{	ref class mappStats
+{	public ref class mappStats
 	{
 	private:
 		String^ Ref_Art;

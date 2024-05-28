@@ -20,20 +20,16 @@ namespace Tests
         {
             Console.WriteLine("Test Start: AjouterClient");
 
-            // Assign
             var lesAdresses = new string[] {
                 "123", "Rue de Test", "Ville Test", "12345", "Pays Test", "Infos supplémentaires"
             };
 
-            // Act
             gestionClient.ajouter("Nom Test", "Prénom Test", DateTime.Now, DateTime.Now, lesAdresses);
 
-            // Retrieve the list of clients
             DataSet result = gestionClient.listeClients("Client");
             Assert.IsNotNull(result, "DataSet should not be null");
             Assert.IsTrue(result.Tables.Contains("Client"), "DataTable 'Client' should exist");
 
-            // Check if the new client is in the DataTable
             bool isAdded = false;
             foreach (DataRow row in result.Tables["Client"].Rows)
             {
@@ -44,7 +40,6 @@ namespace Tests
                 }
             }
 
-            // Assert
             Assert.IsTrue(isAdded, "The client should be added to the DataTable");
         }
 
@@ -53,15 +48,12 @@ namespace Tests
         {
             Console.WriteLine("Test Start: ModifierClient");
 
-            // Assign
             var lesAdresses = new string[] {
                 "123", "Rue de Test", "Ville Test", "12345", "Pays Test", "Infos supplémentaires"
             };
 
-            // Add client first
             gestionClient.ajouter("Nom Test", "Prénom Test", DateTime.Now, DateTime.Now, lesAdresses);
 
-            // Retrieve the ID of the added client
             DataSet result = gestionClient.listeClients("Client");
             int idClient = -1;
             foreach (DataRow row in result.Tables["Client"].Rows)
@@ -73,18 +65,14 @@ namespace Tests
                 }
             }
 
-            // Update client info
             var updatedLesAdresses = new string[] {
                 "456", "Nouvelle Rue", "Nouvelle Ville", "54321", "Nouveau Pays", "Nouvelles infos supplémentaires"
             };
 
-            // Act
             gestionClient.modifier(idClient, "Nouveau Nom", "Nouveau Prénom", DateTime.Now, DateTime.Now, updatedLesAdresses);
 
-            // Retrieve the list of clients
             result = gestionClient.listeClients("Client");
 
-            // Check if the client is updated in the DataTable
             bool isUpdated = false;
             foreach (DataRow row in result.Tables["Client"].Rows)
             {
@@ -95,7 +83,6 @@ namespace Tests
                 }
             }
 
-            // Assert
             Assert.IsTrue(isUpdated, "The client should be updated in the DataTable");
         }
 
@@ -104,15 +91,12 @@ namespace Tests
         {
             Console.WriteLine("Test Start: SupprimerClient");
 
-            // Assign
             var lesAdresses = new string[] {
                 "123", "Rue de Test", "Ville Test", "12345", "Pays Test", "Infos supplémentaires"
             };
 
-            // Add client first
             gestionClient.ajouter("Nom Test", "Prénom Test", DateTime.Now, DateTime.Now, lesAdresses);
 
-            // Retrieve the ID of the added client
             DataSet result = gestionClient.listeClients("Client");
             int idClient = -1;
             foreach (DataRow row in result.Tables["Client"].Rows)
@@ -124,13 +108,10 @@ namespace Tests
                 }
             }
 
-            // Act
             gestionClient.supprimer(idClient);
 
-            // Retrieve the list of clients
             result = gestionClient.listeClients("Client");
 
-            // Check if the client is deleted from the DataTable
             bool isDeleted = true;
             foreach (DataRow row in result.Tables["Client"].Rows)
             {
@@ -141,7 +122,6 @@ namespace Tests
                 }
             }
 
-            // Assert
             Assert.IsTrue(isDeleted, "The client should be deleted from the DataTable");
         }
     }

@@ -13,7 +13,7 @@ using namespace System::Xml;
 using namespace System;
 namespace NS_SVC
 {
-	ref class gestionCommandes
+	public ref class gestionCommandes
 	{
 	private:
 		NS_Composants::CAD^ cad;

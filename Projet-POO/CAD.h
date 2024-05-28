@@ -5,7 +5,7 @@ using namespace System::Xml;
 using namespace System;
 namespace NS_Composants
 {
-	ref class CAD
+	public ref class CAD
 	{
 	private:
 		String^ cnx;
