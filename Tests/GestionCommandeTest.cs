@@ -1,8 +1,6 @@
-using System;
 using System.Data;
 using NS_SVC;
-using NUnit.Framework; // Assurez-vous d'importer la bonne référence pour NUnit
-using NS_Composants;
+using NUnit.Framework;
 
 namespace Tests
 {

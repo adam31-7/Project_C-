@@ -1,6 +1,5 @@
 using NUnit.Framework;
-using NS_Composants; // Assurez-vous d'inclure l'espace de noms contenant votre classe CAD
-using System;
+using NS_Composants;
 using System.Data;
 
 namespace Tests

@@ -1,6 +1,5 @@
 using NUnit.Framework;
 using NS_Composants;
-using System;
 using System.Data;
 using System.Data.SQLite;
 
